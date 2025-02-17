@@ -490,7 +490,11 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
             {
                 return false;
             }
-            return true;
+            if (coll.CompareTag("bullet"))
+            {
+                if (coll.GetComponent<glueBullet>().GetGlueState() == glueBullet.GlueState.Moving) return false;
+            }
+                return true;
         }
 
         public void OnGroundHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
@@ -513,9 +517,16 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                     }
             }
 
-            if (hitCollider.CompareTag("bullet")) {
-                Vector3 direction = Motor.Velocity.normalized;
-                AddVelocity(hitCollider.GetComponent<glueBullet>().Bounce(direction, hitCollider.transform.up)*(Motor.Velocity.magnitude/MaxAirMoveSpeed));
+            if (hitCollider.CompareTag("bullet"))
+            {
+                glueBullet glue = hitCollider.GetComponent<glueBullet>();
+                if (glue.GetGlueState() == glueBullet.GlueState.Glued)
+                {
+                    Vector3 direction = Motor.Velocity.normalized;
+                    Motor.ForceUnground(0.1f); // Disable ground snapping for a brief instant
+                    AddVelocity(glue.Bounce(direction, hitCollider.transform.up) * (Motor.Velocity.magnitude / MaxAirMoveSpeed));
+                }
+                return;
             }
         }
 

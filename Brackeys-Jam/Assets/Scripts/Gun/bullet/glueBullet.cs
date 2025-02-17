@@ -75,6 +75,11 @@ public class glueBullet : MonoBehaviour
         return (Vector3.up + normal).normalized * bounceAmount;
     }
 
+    public GlueState GetGlueState()
+    {
+        return _glueState;
+    }
+
     private IEnumerator DestroyAfterTime()
     {
         yield return new WaitForSeconds(lifeTime);
