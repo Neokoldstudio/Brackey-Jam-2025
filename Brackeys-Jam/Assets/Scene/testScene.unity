@@ -1280,7 +1280,7 @@ MonoBehaviour:
   SwimmingSpeed: 10
   SwimmingMovementSharpness: 10
   SwimmingOrientationSharpness: 10
-  ImpulseMultiplier: 1
+  ImpulseMultiplier: 4
   HorizontalVelocityThreshold: 0.2
   IgnoredColliders: []
   OrientTowardsGravity: 0
