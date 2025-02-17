@@ -512,6 +512,11 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                         break;
                     }
             }
+
+            if (hitCollider.CompareTag("bullet")) {
+                Vector3 direction = Motor.Velocity.normalized;
+                AddVelocity(hitCollider.GetComponent<glueBullet>().Bounce(direction, hitCollider.transform.up)*(Motor.Velocity.magnitude/MaxAirMoveSpeed));
+            }
         }
 
         public void AddVelocity(Vector3 velocity)
