@@ -88,7 +88,6 @@ public class glueBullet : MonoBehaviour
     {
         if (_glueState == GlueState.Moving)
         {
-            Debug.Log("bye :)");
             StartCoroutine(ShrinkAndDestroy());
         }
     }

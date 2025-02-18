@@ -407,6 +407,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                                     if (Motor.Velocity.y >= 7.5f && (Mathf.Abs(Motor.Velocity.x) > HorizontalVelocityThreshold || Mathf.Abs(Motor.Velocity.z) > HorizontalVelocityThreshold))
                                     {
                                         smoothedVelocity += (Motor.CharacterUp * JumpSpeed * ImpulseMultiplier) - Vector3.Project(currentVelocity, Motor.CharacterUp);
+                                        ScoreManager.Instance.RegisterAction("Dolphin Jump");
                                     }
                                     else
                                     {

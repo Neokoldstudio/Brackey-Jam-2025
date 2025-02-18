@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
             levelTimer -= Time.deltaTime;
             if (levelTimer <= 0)
             {
-                EndLevel();
+                WinLevel();
             }
         }
     }
@@ -91,9 +91,20 @@ public class GameManager : MonoBehaviour
         playerScore += amount;
     }
 
-    private void EndLevel()
+    public void LoseLevel()
+    {
+        Debug.Log("Level Failed! Score: " + playerScore);
+        // Implement level transition logic here
+    }
+
+    public void WinLevel()
     {
         Debug.Log("Level Complete! Score: " + playerScore);
         // Implement level transition logic here
+    }
+
+    private void EndLevel()
+    {
+        Debug.Log("Level Ended! Score: " + playerScore);
     }
 }

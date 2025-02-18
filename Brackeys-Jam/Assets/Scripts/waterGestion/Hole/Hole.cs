@@ -20,6 +20,7 @@ public class Hole : MonoBehaviour
     public void Die()
     {
         StartCoroutine(ShrinkAndDestroy());
+        ScoreManager.Instance.RegisterAction("Hole Plucked");
     }
 
     public void SetHoleSpawner(HoleSpawner holeSpawner)

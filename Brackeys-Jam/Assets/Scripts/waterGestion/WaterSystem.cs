@@ -24,6 +24,11 @@ public class WaterSystem : MonoBehaviour
             Vector3 scale = waterObject.localScale;
             scale.y += (baseGrowthRate + activeHoles * growthPerHole) * Time.deltaTime;
             waterObject.localScale = scale;
+
+            if(scale.y > maxWaterHeight)
+            {
+                GameManager.Instance.LoseLevel();
+            }
         }
     }
 
