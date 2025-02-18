@@ -18,6 +18,7 @@ public class glueBullet : MonoBehaviour
     public float lifeTime = 10f;
     public float bounceAmount = 2f;
     public float shrinkSpeed = 3f;
+    public float maxFlightTime = 0.5f;
 
     private Collider _SphereCollider;
     private Collider _BoxCollider;
@@ -32,6 +33,7 @@ public class glueBullet : MonoBehaviour
         _Rigidbody = this.GetComponent<Rigidbody>();
         _SphereCollider.enabled = true;
         _BoxCollider.enabled = false;
+        Invoke("explodeMidAir", maxFlightTime);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -54,18 +56,20 @@ public class glueBullet : MonoBehaviour
                 if (collision.gameObject.CompareTag("bullet"))
                 {
                     _Rigidbody.AddForce(Bounce(_Rigidbody.velocity.normalized, collision.gameObject.transform.up), ForceMode.Impulse);
+                    _Rigidbody.useGravity = true;
+                }
+                if (collision.gameObject.CompareTag("hole"))
+                {
+                    Hole hole = collision.gameObject.GetComponent<Hole>();
+                    hole.GetHit();
+                    Destroy(this.gameObject);
                 }
                 break;
 
             case GlueState.Glued:
-                if (collision.gameObject.CompareTag("Player"))
-                {
-                    Debug.Log("bonjour");
-                }
                 /*Debug.Log("Player Bounced !");
                 Vector3 direction = collision.gameObject.GetComponent<KinematicCharacterMotor>().Velocity.normalized;
                 collision.gameObject.GetComponent<MyCharacterController>().AddVelocity(Bounce(direction, transform.up));*/
-
                 break;
         }
     }
@@ -78,6 +82,15 @@ public class glueBullet : MonoBehaviour
     public GlueState GetGlueState()
     {
         return _glueState;
+    }
+
+    private void explodeMidAir()
+    {
+        if (_glueState == GlueState.Moving)
+        {
+            Debug.Log("bye :)");
+            StartCoroutine(ShrinkAndDestroy());
+        }
     }
 
     private IEnumerator DestroyAfterTime()

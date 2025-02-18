@@ -10,14 +10,21 @@ public class Gun : MonoBehaviour
     [Header("Gun Stats")]
     public float timeBetweenShooting = 0.1f;
     public float spread = 0.1f;
-    public float reloadTime = 1.5f;
     public float timeBetweenShots = 0.1f;
-    public int magazineSize = 10;
     public int bulletsPerTap = 1;
     public bool allowButtonHold = false;
 
-    private int bulletsLeft;
-    private int bulletsShot;
+    [Header("Hitscan Gun Stats")]
+    public float hitscanDamage = 10f;
+    public float hitscanRange = 100f;
+    public float hitscanSpread = 0.05f;
+    public float hitscanReloadTime = 1.2f;
+    public float hitscanTimeBetweenShots = 0.2f;
+    public int hitscanMagazineSize = 15;
+
+    private int hitscanBulletsLeft;
+    private bool hitscanReadyToShoot = true;
+    private bool hitscanReloading = false;
 
     [Header("Recoil")]
     public Rigidbody playerRb;
@@ -26,13 +33,14 @@ public class Gun : MonoBehaviour
     [Header("References")]
     public Camera fpsCam;
     public Transform attackPoint;
-    public GameObject muzzleFlashPrefab;
+    public GameObject rayMuzzleFlashPrefab;
+    public GameObject glueMuzzleFlashPrefab;
 
-    private bool shooting, readyToShoot = true, reloading = false;
+    private bool shooting, readyToShoot = true;
 
     private void Awake()
     {
-        bulletsLeft = magazineSize;
+        hitscanBulletsLeft = hitscanMagazineSize;
     }
 
     private void Update()
@@ -42,22 +50,17 @@ public class Gun : MonoBehaviour
 
     private void HandleInput()
     {
-        shooting = allowButtonHold ? Input.GetKey(KeyCode.Mouse0) : Input.GetKeyDown(KeyCode.Mouse0);
+        shooting = allowButtonHold ? Input.GetKey(KeyCode.Mouse1) : Input.GetKeyDown(KeyCode.Mouse1);
+        bool hitscanShoot = allowButtonHold ? Input.GetKey(KeyCode.Mouse0) : Input.GetKeyDown(KeyCode.Mouse0);
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading)
+        if (readyToShoot && shooting)
         {
-            Reload();
-        }
-
-        if (readyToShoot && shooting && !reloading && bulletsLeft <= 0)
-        {
-            Reload();
-        }
-
-        if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
-        {
-            bulletsShot = 0;
             Shoot();
+        }
+
+        if (hitscanReadyToShoot && hitscanShoot && !hitscanReloading && hitscanBulletsLeft > 0)
+        {
+            FireHitscan();
         }
     }
 
@@ -69,8 +72,6 @@ public class Gun : MonoBehaviour
         Vector3 targetPoint = Physics.Raycast(ray, out RaycastHit hit) ? hit.point : ray.GetPoint(75);
 
         Vector3 direction = (targetPoint - attackPoint.position).normalized;
-
-        // Apply spread using a random spherical offset
         direction += Random.insideUnitSphere * spread;
 
         GameObject bullet = Instantiate(bulletPrefab, attackPoint.position, Quaternion.LookRotation(direction));
@@ -82,26 +83,45 @@ public class Gun : MonoBehaviour
             bulletRb.AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
         }
 
-        // Muzzle Flash
-        if (muzzleFlashPrefab)
+        if (glueMuzzleFlashPrefab)
         {
-            Instantiate(muzzleFlashPrefab, attackPoint.position, Quaternion.identity);
+            Instantiate(glueMuzzleFlashPrefab, attackPoint.position, Quaternion.identity);
         }
 
-        // Apply recoil
         if (playerRb)
         {
             playerRb.AddForce(-direction * recoilForce, ForceMode.Impulse);
         }
 
-        bulletsLeft--;
-        bulletsShot++;
-
         Invoke(nameof(ResetShot), timeBetweenShooting);
+    }
 
-        if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
+    private void FireHitscan()
+    {
+        hitscanReadyToShoot = false;
+        hitscanBulletsLeft--;
+
+        Vector3 direction = fpsCam.transform.forward + Random.insideUnitSphere * hitscanSpread;
+
+        if (Physics.Raycast(fpsCam.transform.position, direction, out RaycastHit hit, hitscanRange))
         {
-            Invoke(nameof(Shoot), timeBetweenShots);
+            Debug.Log("shot smth");
+            /*if (hit.collider.gameObject.TryGetComponent(out Health targetHealth))
+            {
+                targetHealth.TakeDamage(hitscanDamage);
+            }*/
+        }
+
+        if (rayMuzzleFlashPrefab)
+        {
+            Instantiate(rayMuzzleFlashPrefab, attackPoint.position, Quaternion.identity);
+        }
+
+        Invoke(nameof(ResetHitscanShot), hitscanTimeBetweenShots);
+
+        if (hitscanBulletsLeft <= 0)
+        {
+            ReloadHitscan();
         }
     }
 
@@ -110,16 +130,21 @@ public class Gun : MonoBehaviour
         readyToShoot = true;
     }
 
-    private void Reload()
+    private void ResetHitscanShot()
     {
-        if (reloading) return;
-        reloading = true;
-        Invoke(nameof(FinishReload), reloadTime);
+        hitscanReadyToShoot = true;
     }
 
-    private void FinishReload()
+    private void ReloadHitscan()
     {
-        bulletsLeft = magazineSize;
-        reloading = false;
+        if (hitscanReloading) return;
+        hitscanReloading = true;
+        Invoke(nameof(FinishHitscanReload), hitscanReloadTime);
+    }
+
+    private void FinishHitscanReload()
+    {
+        hitscanBulletsLeft = hitscanMagazineSize;
+        hitscanReloading = false;
     }
 }
