@@ -67,7 +67,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 75
   orthographic: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   Camera: {fileID: 20127477809793788}
   FollowPointFraming: {x: 0, y: 0}
   FollowingSharpness: 10000
-  DefaultDistance: 6
+  DefaultDistance: 0
   MinDistance: 0
   MaxDistance: 10
   DistanceMovementSpeed: 5

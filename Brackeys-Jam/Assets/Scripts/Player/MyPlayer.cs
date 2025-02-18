@@ -60,19 +60,13 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
             }
 
             // Input for zooming the camera (disabled in WebGL because it can cause problems)
-            float scrollInput = -Input.GetAxis(MouseScrollInput);
+            float scrollInput = 0f;
 #if UNITY_WEBGL
         scrollInput = 0f;
 #endif
 
             // Apply inputs to the camera
             OrbitCamera.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
-
-            // Handle toggling zoom level
-            if (Input.GetMouseButtonDown(1))
-            {
-                OrbitCamera.TargetDistance = (OrbitCamera.TargetDistance == 0f) ? OrbitCamera.DefaultDistance : 0f;
-            }
         }
 
         private void HandleCharacterInput()

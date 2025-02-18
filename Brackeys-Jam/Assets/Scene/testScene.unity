@@ -1275,7 +1275,7 @@ Transform:
   m_GameObject: {fileID: 1169772681}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4003, y: -0.1071, z: 1.247}
+  m_LocalPosition: {x: 0.4003, y: -0.1071, z: 1.552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6829791638226261346, guid: 070ed179d1f736f4dadc394d2aa23363,
     type: 3}
-  shootForce: 20
+  shootForce: 50
   upwardForce: 3
   timeBetweenShooting: 0.2
   spread: 0
@@ -1501,6 +1501,7 @@ GameObject:
   - component: {fileID: 1219715621}
   - component: {fileID: 1219715619}
   - component: {fileID: 1219715623}
+  - component: {fileID: 1219715624}
   m_Layer: 7
   m_Name: Character
   m_TagString: Player
@@ -1631,6 +1632,33 @@ MonoBehaviour:
   Gravity: {x: 0, y: -30, z: 0}
   MeshRoot: {fileID: 301500497}
   SwimmingExitCooldown: 1
+--- !u!54 &1219715624
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219715618}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1284188786
 GameObject:
   m_ObjectHideFlags: 0
