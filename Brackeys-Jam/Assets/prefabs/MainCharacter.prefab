@@ -136,7 +136,7 @@ MonoBehaviour:
   timeBetweenShots: 0.2
   bulletsPerTap: 1
   allowButtonHold: 1
-  hitscanDamage: 10
+  hitscanDamage: 50
   hitscanRange: 100
   hitscanSpread: 0.05
   hitscanReloadTime: 1.2

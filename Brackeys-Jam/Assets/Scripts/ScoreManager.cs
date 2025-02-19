@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
         {"Ground Bounce", (50, 0.1f)},
         {"Wall Bounce", (100, 0.3f)},
         {"Kill", (100, 0.3f)},
-        {"AerialKill", (250, 1.0f)},
+        {"Airborne Kill", (250, 1.0f)},
         {"Hole Plucked With Enemy !!", (400, 2.0f)}
     };
 

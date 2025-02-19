@@ -123,6 +123,7 @@ MonoBehaviour:
   maxWaterHeight: 10
   baseGrowthRate: 0.1
   growthPerHole: 0.1
+  waterPlane: {fileID: 7067862156090117827}
 --- !u!1 &7067862156090117827
 GameObject:
   m_ObjectHideFlags: 0

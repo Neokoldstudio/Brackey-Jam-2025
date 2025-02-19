@@ -12,6 +12,7 @@ public class HoleSpawner : MonoBehaviour
         if (currentHole == null)
         {
             currentHole = Instantiate(holePrefab, transform.position, Quaternion.identity);
+            currentHole.transform.rotation = this.transform.rotation;
             currentHole.GetComponent<Hole>().SetHoleSpawner(this);
             return true;
         }
@@ -28,4 +29,10 @@ public class HoleSpawner : MonoBehaviour
     }
 
     public bool HasHole() { return currentHole != null; }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position,1f);
+    }
 }

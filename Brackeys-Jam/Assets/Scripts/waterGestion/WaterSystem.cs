@@ -6,30 +6,42 @@ public class WaterSystem : MonoBehaviour
 
     [Header("Water Scaling Settings")]
     public Transform waterObject; // Assign your water cube here
-    public float maxWaterHeight = 10f;
+    public float maxWaterHeight = 100f;
+    public float baseWaterLevel = 66f;
     public float baseGrowthRate = 0.1f;
     public float growthPerHole = 0.1f;
     private int activeHoles = 0;
+    private float waterLevel = 0f;
+
+    public Transform waterPlane;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        waterLevel = baseWaterLevel;
     }
 
     private void Update()
     {
         if (waterObject)
         {
-            Vector3 scale = waterObject.localScale;
-            scale.y += (baseGrowthRate + activeHoles * growthPerHole) * Time.deltaTime;
-            waterObject.localScale = scale;
-
-            if(scale.y > maxWaterHeight)
+            if (waterLevel > maxWaterHeight)
             {
                 GameManager.Instance.LoseLevel();
+                return;
             }
+
+            waterLevel += (baseGrowthRate + activeHoles * growthPerHole) * Time.deltaTime;
+            Vector3 scale = waterObject.localScale;
+            scale.y = Mathf.Lerp(scale.y, waterLevel, Time.deltaTime);
+            waterObject.localScale = scale;
         }
+    }
+
+    public void DrainWater(float drainedAmount)
+    {
+        waterLevel = Mathf.Max(baseWaterLevel, waterLevel - drainedAmount);
     }
 
     public void RegisterHole()
@@ -41,4 +53,6 @@ public class WaterSystem : MonoBehaviour
     {
         activeHoles = Mathf.Max(0, activeHoles - 1);
     }
+
+    public float getWaterPlaneHeight() => waterPlane.position.y;
 }

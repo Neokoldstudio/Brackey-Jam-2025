@@ -129,6 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6477787556089132256}
+  - component: {fileID: 6534173599952947465}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -151,3 +152,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6790081810937231301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6534173599952947465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5612104010526808766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c33b06c9aca42048a30ab8d6a63f75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airEnemy: {fileID: 6061162662957046919, guid: 084ac36b5be060e4797ed376aab1a544,
+    type: 3}
+  waterEnemy: {fileID: 5333258801925636887, guid: c96f600b6ee76a34da9cfee9b62e76b5,
+    type: 3}
+  spawnRate: 10
+  spawnProbability: 0.2

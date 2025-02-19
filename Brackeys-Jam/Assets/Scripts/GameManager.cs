@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using KinematicCharacterController;
+using KinematicCharacterController.Walkthrough.SwimmingState;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Hole Spawning")]
     public List<HoleSpawner> holeSpawners = new List<HoleSpawner>();
+    private GameObject Player;
     private int maxActiveHoles;
     public float spawnInterval = 5f;
     private float spawnTimer;
@@ -20,6 +23,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
@@ -84,6 +88,19 @@ public class GameManager : MonoBehaviour
             if (spawner.HasHole()) count++;
         }
         return count;
+    }
+
+    public bool isPlayerOnGround()
+    {
+        KinematicCharacterMotor Motor = Player.GetComponent<KinematicCharacterMotor>();
+        MyCharacterController Character = Player.GetComponent<MyCharacterController>();
+        return (Motor.GroundingStatus.IsStableOnGround);
+    }
+
+    public bool isPlayerUnderwater()
+    {
+        MyCharacterController Character = Player.GetComponent<MyCharacterController>();
+        return Character.CurrentCharacterState == CharacterState.Swimming;
     }
 
     public void IncreaseScore(int amount)

@@ -101,15 +101,15 @@ public class Gun : MonoBehaviour
         hitscanReadyToShoot = false;
         hitscanBulletsLeft--;
 
-        Vector3 direction = fpsCam.transform.forward + Random.insideUnitSphere * hitscanSpread;
+        Vector3 direction = fpsCam.transform.forward;
 
         if (Physics.Raycast(fpsCam.transform.position, direction, out RaycastHit hit, hitscanRange))
         {
             Debug.Log("shot smth");
-            /*if (hit.collider.gameObject.TryGetComponent(out Health targetHealth))
+            if (hit.collider.gameObject.TryGetComponent(out Entity entity))
             {
-                targetHealth.TakeDamage(hitscanDamage);
-            }*/
+                entity.GetHit(hitscanDamage);
+            }
         }
 
         if (rayMuzzleFlashPrefab)

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626397270071222859}
   - component: {fileID: 7041158382852626720}
+  - component: {fileID: 6322125820153183027}
   m_Layer: 0
   m_Name: HoleSpawner
   m_TagString: Untagged
@@ -46,3 +47,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holePrefab: {fileID: 3116443698123111399, guid: 8e1e3d70afe2e664bace01a83a39f7f6,
     type: 3}
+--- !u!114 &6322125820153183027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7617349547502963579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30dde2cd6fffd2f4994a291bfa78ae0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawX: 0
+  DrawY: 1
+  DrawZ: 0
+  Length: 1
+  HeadSize: 0.1

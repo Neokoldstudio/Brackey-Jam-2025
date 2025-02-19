@@ -15,6 +15,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void GetHit(float damage)
     {
+        Debug.Log("ouch");
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
