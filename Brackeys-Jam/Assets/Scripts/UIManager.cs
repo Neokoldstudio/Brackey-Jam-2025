@@ -7,8 +7,11 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     public TMP_Text rankText; // Displays current rank
     public TMP_Text actionStackText; // Displays recent actions
+    public TMP_Text scoreText;
+    public TMP_Text multiplierText;
 
     private float displayScore;
+    private float displayMultiplier;
     private List<string> recentActions = new List<string>();
     private const int maxActions = 5;
 
@@ -24,21 +27,14 @@ public class UIManager : MonoBehaviour
     {
         // Smooth rank transition
         displayScore = Mathf.Lerp(displayScore, ScoreManager.Instance.GetScore(), Time.deltaTime * 5);
-        UpdateRank(displayScore);
+        displayMultiplier = Mathf.Lerp(displayMultiplier, ScoreManager.Instance.GetMultiplier(), Time.deltaTime * 5);
+        scoreText.text = Mathf.RoundToInt(displayScore).ToString();
+        multiplierText.text = "x" + displayMultiplier.ToString("0.0");
     }
 
-    public void UpdateRank(float score)
+    public void UpdateRank(string rank)
     {
-        string newRank = "DULL";
-        for (int i = thresholds.Length - 1; i >= 0; i--)
-        {
-            if (score >= thresholds[i])
-            {
-                newRank = ranks[i];
-                break;
-            }
-        }
-        rankText.text = newRank;
+        rankText.text = rank;
     }
 
     public void AddAction(string action)
