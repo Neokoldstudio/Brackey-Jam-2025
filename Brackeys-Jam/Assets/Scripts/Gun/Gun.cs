@@ -93,6 +93,8 @@ public class Gun : MonoBehaviour
             playerRb.AddForce(-direction * recoilForce, ForceMode.Impulse);
         }
 
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.glueGunShot, this.transform.position);
+
         Invoke(nameof(ResetShot), timeBetweenShooting);
     }
 
