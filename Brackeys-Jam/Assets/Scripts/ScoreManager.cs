@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
     {
         {"Hole Plucked", (200, 1.0f)},
         {"Dolphin Jump", (300, 0.2f)},
-        {"Ground Bounce", (50, 0.1f)},
+        {"Bullet Bounce", (50, 0.1f)},
         {"Wall Bounce", (100, 0.3f)},
         {"Kill", (100, 0.3f)},
         {"Airborne Kill", (250, 1.0f)},

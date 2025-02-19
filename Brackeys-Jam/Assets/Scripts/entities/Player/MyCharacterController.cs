@@ -521,11 +521,15 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
             if (hitCollider.CompareTag("bullet"))
             {
                 glueBullet glue = hitCollider.GetComponent<glueBullet>();
-                if (glue.GetGlueState() == glueBullet.GlueState.Glued)
+                if (glue.GetGlueState() == glueBullet.GlueState.Glued && CurrentCharacterState != CharacterState.Swimming)
                 {
                     Vector3 direction = Motor.Velocity.normalized;
                     Motor.ForceUnground(0.1f); // Disable ground snapping for a brief instant
                     AddVelocity(glue.Bounce(direction, hitCollider.transform.up) * (Motor.Velocity.magnitude / MaxAirMoveSpeed));
+
+                    float dot = Vector3.Dot(hitCollider.transform.up, Vector3.up);
+                    if(dot < 0.2f) ScoreManager.Instance.RegisterAction("Wall Bounce");
+                    else ScoreManager.Instance.RegisterAction("Bullet Bounce");
                 }
                 return;
             }
