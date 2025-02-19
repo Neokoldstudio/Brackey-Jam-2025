@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController;
 using System;
+using FMOD.Studio;
 
 namespace KinematicCharacterController.Walkthrough.SwimmingState
 {
@@ -88,6 +89,9 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
         private float _lastSwimmingExitTime = -1f;
         public float SwimmingExitCooldown = 1f; // Cooldown in seconds
 
+        //audio
+        private EventInstance playerFootsteps;
+
         private void Start()
         {
             // Assign to motor
@@ -95,6 +99,10 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
 
             // Handle initial state
             TransitionToState(CharacterState.Default);
+
+            playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
+
+
         }
 
         /// <summary>
@@ -558,5 +566,26 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
         public void OnDiscreteCollisionDetected(Collider hitCollider)
         {
         }
+
+        private void UpdateSound()
+        {
+            //start footsteps event if the player has an x velocity and is on the ground
+            if (Motor.GroundingStatus.IsStableOnGround && Motor.Velocity.x != 0)
+            {
+                //get the playback state
+                PLAYBACK_STATE playbackState;
+                playerFootsteps.getPlaybackState(out playbackState);
+                if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+                {
+                    playerFootsteps.start();
+                }
+            }
+            //otherwise, stop the footsteps event
+            else
+            {
+                playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+            }
+        }
+
     }
 }

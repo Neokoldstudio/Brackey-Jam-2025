@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638755712574756467
+  lastModified: 638755751095577820
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638755712574827494
+  lastModified: 638755751095597918
   FileSizes:
   - Name: Desktop
     Value: 862
@@ -91,7 +91,7 @@ MonoBehaviour:
   - {fileID: -5342852862996881151}
   StringsBanks:
   - {fileID: -2130328015297926904}
-  cacheTime: 638755712574909205
+  cacheTime: 638755751097861784
   cacheVersion: 131609
 --- !u!114 &1404675983385182642
 MonoBehaviour:
@@ -108,7 +108,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638755712574909205
+  lastModified: 638755751097861784
   FileSizes:
   - Name: Desktop
     Value: 127776
