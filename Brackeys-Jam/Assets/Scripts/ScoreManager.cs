@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
     public float comboDecayTimer = 3.0f;
     public float multiplierDecayTime = 1.5f;
     private float lastActionTime;
+    private string previousAction = "";
 
     private int currentRank = 0;
 
@@ -32,11 +33,19 @@ public class ScoreManager : MonoBehaviour
         {"Hole Plucked With Enemy !!", (400, 2.0f)}
     };
 
+    private Dictionary<string, float> currentActionValues;
+
     private List<string> recentActions = new List<string>();
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
+
+        currentActionValues = new Dictionary<string, float>();
+        foreach (var action in actionValues)
+        {
+            currentActionValues[action.Key] = action.Value.basePoints;
+        }
     }
 
     private void Update()
@@ -62,15 +71,24 @@ public class ScoreManager : MonoBehaviour
     {
         if (actionValues.ContainsKey(action))
         {
-            var (basePoints, Multiplier) = actionValues[action];
+            if (action == previousAction)
+            {
+                currentActionValues[action] *= 0.5f;
+            }
+            else
+            {
+                currentActionValues[action] = actionValues[action].basePoints;
+            }
 
-            float bonus = recentActions.Contains(action) ? 0.5f : 1.0f;
+            previousAction = action;
 
-            score += basePoints * styleMultiplier * bonus;
+            var (basePoints, Multiplier) = (currentActionValues[action], actionValues[action].bonusMultiplier);
+
+            score += basePoints * styleMultiplier;
             styleMultiplier += Multiplier;
             styleMultiplier = Mathf.Clamp(styleMultiplier, minMultiplier, maxMultiplier);
             lastActionTime = Time.time;
-
+            Debug.Log(basePoints);
             recentActions.Add(action);
             if (recentActions.Count > 5) recentActions.RemoveAt(0);
 
