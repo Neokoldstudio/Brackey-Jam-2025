@@ -17,6 +17,8 @@ public class Enemy : Entity
     public LayerMask playerMask;
     public GameObject bulletPrefab;
     public float shootForce = 10f;
+    public GameObject gluedEnemy;
+
 
     private Transform player;
     private Vector3 wanderTarget;
@@ -26,7 +28,7 @@ public class Enemy : Entity
     protected override void Awake()
     {
         base.Awake();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().GetPlayerTarget();
         SetNewWanderTarget();
     }
 
@@ -133,5 +135,23 @@ public class Enemy : Entity
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
         isAttacking = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            Vector3 direction = (transform.position - collision.gameObject.transform.position).normalized;
+            GameObject glued = Instantiate(gluedEnemy, transform.position, Quaternion.identity);
+            Rigidbody gluedRb = glued.GetComponent<Rigidbody>();
+
+            if (gluedRb)
+            {
+                gluedRb.velocity = direction * 10f;
+            }
+            ScoreManager.Instance.RegisterAction("Ennemy Glued !");
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

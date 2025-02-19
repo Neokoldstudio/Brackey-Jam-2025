@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerManager : Entity
 {
+    public Transform playerTarget;
+
     protected override void Die()
     {
         GameManager.Instance.LoseLevel();
-        base.Die();
+    }
+
+    public Transform GetPlayerTarget()
+    {
+        return playerTarget;
     }
 }

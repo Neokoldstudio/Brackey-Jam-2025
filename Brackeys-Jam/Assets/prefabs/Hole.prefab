@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6790081810937231301}
   - component: {fileID: 6161809674117518036}
   - component: {fileID: 8705697876072117719}
-  - component: {fileID: 4450444384030507848}
   - component: {fileID: 304888412185803576}
+  - component: {fileID: 768365530016750114}
   m_Layer: 0
   m_Name: Hole
   m_TagString: hole
@@ -86,8 +86,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4450444384030507848
-BoxCollider:
+--- !u!114 &304888412185803576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116443698123111399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dab2ea538b26ce478c8cfa89b484adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shrinkSpeed: 3
+--- !u!135 &768365530016750114
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,21 +118,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 1.31
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &304888412185803576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3116443698123111399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dab2ea538b26ce478c8cfa89b484adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shrinkSpeed: 3
 --- !u!1 &5612104010526808766
 GameObject:
   m_ObjectHideFlags: 0

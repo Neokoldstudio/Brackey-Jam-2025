@@ -121,9 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterObject: {fileID: 9200069991182547594}
   maxWaterHeight: 10
+  baseWaterLevel: 66
   baseGrowthRate: 0.1
   growthPerHole: 0.1
-  waterPlane: {fileID: 7067862156090117827}
+  waterPlane: {fileID: 2229058077405089843}
 --- !u!1 &7067862156090117827
 GameObject:
   m_ObjectHideFlags: 0

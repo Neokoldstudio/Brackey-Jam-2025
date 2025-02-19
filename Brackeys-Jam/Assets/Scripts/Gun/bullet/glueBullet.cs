@@ -64,6 +64,11 @@ public class glueBullet : MonoBehaviour
                     hole.GetHit();
                     Destroy(this.gameObject);
                 }
+                if (collision.gameObject.CompareTag("enemyBullet"))
+                {
+                    StartCoroutine(ShrinkAndDestroy());
+                    ScoreManager.Instance.RegisterAction("Bullet Defflected");
+                }
                 break;
 
             case GlueState.Glued:

@@ -133,3 +133,5 @@ MonoBehaviour:
   bulletPrefab: {fileID: 210761787155203293, guid: 5a9de8669edd41e4097e22afd6f4ed2a,
     type: 3}
   shootForce: 10
+  gluedEnemy: {fileID: 4237418374448445355, guid: ca94a29afc8605a409d75bfdcb130bca,
+    type: 3}

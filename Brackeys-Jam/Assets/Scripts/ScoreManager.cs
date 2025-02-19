@@ -29,8 +29,11 @@ public class ScoreManager : MonoBehaviour
         {"Bullet Bounce", (50, 0.1f)},
         {"Wall Bounce", (100, 0.3f)},
         {"Kill", (100, 0.3f)},
+        {"Boom !!", (200, 0.3f)},
         {"Airborne Kill", (250, 1.0f)},
-        {"Hole Plucked With Enemy !!", (400, 2.0f)}
+        {"Hole Plucked With Enemy !!", (400, 2.0f)},
+        {"Bullet Defflected", (20, 0.1f)},
+        {"Ennemy Glued !", (10,0.1f)}
     };
 
     private Dictionary<string, float> currentActionValues;
