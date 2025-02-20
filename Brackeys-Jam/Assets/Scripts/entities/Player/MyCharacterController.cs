@@ -530,6 +530,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                     float dot = Vector3.Dot(hitCollider.transform.up, Vector3.up);
                     if(dot < 0.2f) ScoreManager.Instance.RegisterAction("Wall Bounce");
                     else ScoreManager.Instance.RegisterAction("Bullet Bounce");
+                    CinemachineShake.Instance.Shake(1f, 0.1f);
                 }
                 return;
             }

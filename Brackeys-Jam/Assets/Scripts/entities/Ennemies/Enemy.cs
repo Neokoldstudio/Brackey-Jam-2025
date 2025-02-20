@@ -142,12 +142,12 @@ public class Enemy : Entity
         if (collision.gameObject.CompareTag("bullet"))
         {
             Vector3 direction = (transform.position - collision.gameObject.transform.position).normalized;
-            GameObject glued = Instantiate(gluedEnemy, transform.position, Quaternion.identity);
+            GameObject glued = Instantiate(gluedEnemy, collision.gameObject.transform.position, Quaternion.identity);
             Rigidbody gluedRb = glued.GetComponent<Rigidbody>();
 
             if (gluedRb)
             {
-                gluedRb.velocity = direction * 10f;
+                gluedRb.velocity = collision.gameObject.GetComponent<Rigidbody>().velocity * 1000f;
             }
             ScoreManager.Instance.RegisterAction("Ennemy Glued !");
             Destroy(collision.gameObject);

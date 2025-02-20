@@ -103,6 +103,12 @@ public class GameManager : MonoBehaviour
         return Character.CurrentCharacterState == CharacterState.Swimming;
     }
 
+    public Vector3 getPlayerVelocity()
+    {
+        KinematicCharacterMotor Motor = Player.GetComponent<KinematicCharacterMotor>();
+        return Player.transform.InverseTransformDirection(Motor.Velocity);
+    }
+
     public void IncreaseScore(int amount)
     {
         playerScore += amount;

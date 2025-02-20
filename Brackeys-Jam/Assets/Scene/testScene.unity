@@ -2274,6 +2274,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1480126250}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1572742710 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7873214741666193045, guid: 814950623a258c342b8046ed46c53276,
+    type: 3}
+  m_PrefabInstance: {fileID: 7738875865005988543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1585406871
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,6 +3207,47 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170292535950344830, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: m_NoiseProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: b241f91b9ccf8ff489abf204b30d3112,
+        type: 2}
+    - target: {fileID: 3616505989884323440, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1572742710}
+    - target: {fileID: 3616505989884323440, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: m_StandbyUpdate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724383123957007154, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.026882172
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724383123957007154, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.2504187
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740059973389352918, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740059973389352918, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740059973389352918, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: orthographic size
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3740059973389352918, guid: 814950623a258c342b8046ed46c53276,
         type: 3}
