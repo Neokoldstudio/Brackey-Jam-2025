@@ -2378,13 +2378,20 @@ MonoBehaviour:
       Data3: -1032699741
       Data4: 1715105108
     Path: event:/PlayerFootsteps
+  <nailGunShot>k__BackingField:
+    Guid:
+      Data1: -1338287583
+      Data2: 1296491635
+      Data3: 1154273191
+      Data4: 320626078
+    Path: event:/NailGunShot
   <glueGunShot>k__BackingField:
     Guid:
       Data1: -944841927
       Data2: 1235352319
       Data3: 1825426833
       Data4: 2051067850
-    Path: event:/GlueShot
+    Path: event:/GlueGunShot
 --- !u!1 &1629301008
 GameObject:
   m_ObjectHideFlags: 0

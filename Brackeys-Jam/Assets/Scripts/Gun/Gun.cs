@@ -119,6 +119,8 @@ public class Gun : MonoBehaviour
             Instantiate(rayMuzzleFlashPrefab, attackPoint.position, Quaternion.identity);
         }
 
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.nailGunShot, this.transform.position);
+
         Invoke(nameof(ResetHitscanShot), hitscanTimeBetweenShots);
 
         if (hitscanBulletsLeft <= 0)

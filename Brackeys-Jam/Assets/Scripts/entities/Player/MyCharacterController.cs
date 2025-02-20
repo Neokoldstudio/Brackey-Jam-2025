@@ -105,6 +105,11 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
 
         }
 
+        private void FixedUpdate()
+        {
+            UpdateSound();
+        }
+
         /// <summary>
         /// Handles movement state transitions and enter/exit callbacks
         /// </summary>
@@ -304,7 +309,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                             // Smooth movement Velocity
                             currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1 - Mathf.Exp(-StableMovementSharpness * deltaTime));
                         }
-                        else
+                        else 
                         {
                             // Add move input
                             if (_moveInputVector.sqrMagnitude > 0f)
