@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController;
 using System;
+using FMOD.Studio;
 
 namespace KinematicCharacterController.Walkthrough.SwimmingState
 {
@@ -88,6 +89,12 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
         private float _lastSwimmingExitTime = -1f;
         public float SwimmingExitCooldown = 1f; // Cooldown in seconds
 
+        private float timer = 0.0f;
+        private float footstepSpeed = 0.35f;
+
+        //audio
+        private EventInstance playerFootsteps;
+
         private void Start()
         {
             // Assign to motor
@@ -95,6 +102,14 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
 
             // Handle initial state
             TransitionToState(CharacterState.Default);
+
+            playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
+
+        }
+
+        private void FixedUpdate()
+        {
+            UpdateSound();
         }
 
         /// <summary>
@@ -296,7 +311,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                             // Smooth movement Velocity
                             currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1 - Mathf.Exp(-StableMovementSharpness * deltaTime));
                         }
-                        else
+                        else 
                         {
                             // Add move input
                             if (_moveInputVector.sqrMagnitude > 0f)
@@ -559,5 +574,23 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
         public void OnDiscreteCollisionDetected(Collider hitCollider)
         {
         }
+
+        private void UpdateSound()
+        {
+            //start footsteps event if the player has an x velocity and is on the ground
+            if (Motor.GroundingStatus.IsStableOnGround && Motor.Velocity.x != 0)
+            {
+
+                if (timer >= footstepSpeed)
+                {
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootsteps, this.transform.position);
+                    timer = 0.0f;
+                }
+
+                timer += Time.deltaTime;
+
+            }
+        }
+
     }
 }

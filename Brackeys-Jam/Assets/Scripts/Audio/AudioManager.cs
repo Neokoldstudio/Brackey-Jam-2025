@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance {  get; private set; }
+
+    private EventInstance ambienceEventInstance;
 
     private void Awake()
     {
@@ -16,8 +19,26 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        InitiliazeAmbience(FMODEvents.instance.submarineAmbience);
+    }
+
+    private void InitiliazeAmbience(EventReference ambienceEventReference)
+    {
+        ambienceEventInstance = CreateEventInstance(ambienceEventReference);
+        ambienceEventInstance.start();
+    }
+
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
+
+    public EventInstance CreateEventInstance(EventReference eventReference)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        return eventInstance;
+    }
+
 }
