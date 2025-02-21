@@ -2480,6 +2480,86 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <glueGunShot>k__BackingField.Path
+      value: event:/Gun/GlueGunShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <nailGunShot>k__BackingField.Path
+      value: event:/Gun/NailGunShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Path
+      value: event:/SFX/PlayerFootsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <nailGunShot>k__BackingField.Guid.Data1
+      value: -1338287583
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <nailGunShot>k__BackingField.Guid.Data2
+      value: 1296491635
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <nailGunShot>k__BackingField.Guid.Data3
+      value: 1154273191
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <nailGunShot>k__BackingField.Guid.Data4
+      value: 320626078
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <submarineAmbience>k__BackingField.Path
+      value: event:/Ambience/Submarine Ambience
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Guid.Data1
+      value: -454744193
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Guid.Data2
+      value: 1236996075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Guid.Data3
+      value: -1032699741
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Guid.Data4
+      value: 1715105108
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <submarineAmbience>k__BackingField.Guid.Data1
+      value: 1938198109
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <submarineAmbience>k__BackingField.Guid.Data2
+      value: 1163338889
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <submarineAmbience>k__BackingField.Guid.Data3
+      value: -1517043288
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <submarineAmbience>k__BackingField.Guid.Data4
+      value: -1452060142
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
