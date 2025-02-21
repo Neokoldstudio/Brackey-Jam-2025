@@ -14,6 +14,7 @@ public class ScoreManager : MonoBehaviour
     public float multiplierDecayTime = 1.5f;
     private float lastActionTime;
     private string previousAction = "";
+    private bool canUpdate = true;
 
     private int currentRank = 0;
 
@@ -54,21 +55,25 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        float timeSinceLastAction = Time.time - lastActionTime;
-
-        // Decay rank if no recent action
-        if (timeSinceLastAction > comboDecayTimer)
+        if (canUpdate)
         {
-            score = Mathf.Max(0, score - rankDecayRate[currentRank] * Time.deltaTime);
-            UpdateRank();
-        }
+            float timeSinceLastAction = Time.time - lastActionTime;
 
-        if (timeSinceLastAction > multiplierDecayTime)
-        {
-            styleMultiplier = Mathf.Max(minMultiplier, styleMultiplier - multiplierDecayRate[currentRank] * Time.deltaTime);
-        }
+            // Decay rank if no recent action
+            if (timeSinceLastAction > comboDecayTimer)
+            {
+                score = Mathf.Max(0, score - rankDecayRate[currentRank] * Time.deltaTime);
+                UpdateRank();
+            }
 
-        UIManager.Instance.UpdateRank(ranks[currentRank]);
+            if (timeSinceLastAction > multiplierDecayTime)
+            {
+                styleMultiplier = Mathf.Max(minMultiplier, styleMultiplier - multiplierDecayRate[currentRank] * Time.deltaTime);
+            }
+
+            UIManager.Instance.UpdateRank(ranks[currentRank]);
+        }
+        
     }
 
     public void RegisterAction(string action)
@@ -117,6 +122,26 @@ public class ScoreManager : MonoBehaviour
         {
             currentRank = newRank;
         }
+    }
+
+    public void FreezeScore()
+    {
+        canUpdate = false;
+    }
+
+    public void UnfreezeScore()
+    {
+        canUpdate = true;
+    }
+
+    public void Reset()
+    {
+        currentRank = 0;
+        score = 0;
+        styleMultiplier = 1.0f;
+        lastActionTime = 0f;
+        previousAction = "";
+        UnfreezeScore();
     }
 
     public float GetScore() => score;

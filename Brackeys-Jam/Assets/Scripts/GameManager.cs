@@ -111,22 +111,19 @@ public class GameManager : MonoBehaviour
 
     public void LoseLevel()
     {
-        Debug.Log("Level Failed!");
         EndLevel();
         // Implement level transition logic here
     }
 
     public void WinLevel()
     {
-        Debug.Log("Level Complete!");
+        ScoreManager.Instance.FreezeScore();
         EndLevel();
         // Implement level transition logic here
     }
 
     private void EndLevel()
     {
-        Debug.Log("Level Ended! Score: " + ScoreManager.Instance.GetScore());
-        LeaderboardManager.Instance.AddEntry("N30",Mathf.RoundToInt(ScoreManager.Instance.GetScore()));
         SceneManager.LoadScene(SceneManager.loadedSceneCount+1);
     }
 }
