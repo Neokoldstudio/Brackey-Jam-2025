@@ -49,7 +49,7 @@ public class gluedEnemy :Entity
                 nearbyObject.GetComponent<PlayerManager>().GetHit(playerExplosionDamage);
             }
         }
-        CinemachineShake.Instance.Shake(0.5f, 0.5f);
+        CinemachineShake.Instance.Shake(1f, 0.5f);
         ScoreManager.Instance.RegisterAction("Boom !!");
         Die();
     }

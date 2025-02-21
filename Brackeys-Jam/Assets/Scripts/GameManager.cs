@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using KinematicCharacterController;
 using KinematicCharacterController.Walkthrough.SwimmingState;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class GameManager : MonoBehaviour
     [Header("Game Settings")]
     public float levelDuration = 60f;
     private float levelTimer;
-    public int playerScore = 0;
 
     [Header("Hole Spawning")]
     public List<HoleSpawner> holeSpawners = new List<HoleSpawner>();
@@ -109,25 +109,24 @@ public class GameManager : MonoBehaviour
         return Player.transform.InverseTransformDirection(Motor.Velocity);
     }
 
-    public void IncreaseScore(int amount)
-    {
-        playerScore += amount;
-    }
-
     public void LoseLevel()
     {
-        Debug.Log("Level Failed! Score: " + playerScore);
+        Debug.Log("Level Failed!");
+        EndLevel();
         // Implement level transition logic here
     }
 
     public void WinLevel()
     {
-        Debug.Log("Level Complete! Score: " + playerScore);
+        Debug.Log("Level Complete!");
+        EndLevel();
         // Implement level transition logic here
     }
 
     private void EndLevel()
     {
-        Debug.Log("Level Ended! Score: " + playerScore);
+        Debug.Log("Level Ended! Score: " + ScoreManager.Instance.GetScore());
+        LeaderboardManager.Instance.AddEntry("N30",Mathf.RoundToInt(ScoreManager.Instance.GetScore()));
+        SceneManager.LoadScene(SceneManager.loadedSceneCount+1);
     }
 }

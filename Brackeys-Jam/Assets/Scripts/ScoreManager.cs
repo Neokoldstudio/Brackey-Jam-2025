@@ -44,6 +44,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
 
+        DontDestroyOnLoad(gameObject);
         currentActionValues = new Dictionary<string, float>();
         foreach (var action in actionValues)
         {

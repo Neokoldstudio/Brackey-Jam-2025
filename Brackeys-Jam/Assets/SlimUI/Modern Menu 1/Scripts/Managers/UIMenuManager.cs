@@ -90,7 +90,8 @@ namespace SlimUI.ModernMenu{
 			mainMenu.SetActive(true);
 
 			SetThemeColors();
-		}
+			Cursor.lockState = CursorLockMode.None;
+        }
 
 		void SetThemeColors()
 		{
