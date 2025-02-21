@@ -89,6 +89,9 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
         private float _lastSwimmingExitTime = -1f;
         public float SwimmingExitCooldown = 1f; // Cooldown in seconds
 
+        private float timer = 0.0f;
+        private float footstepSpeed = 0.35f;
+
         //audio
         private EventInstance playerFootsteps;
 
@@ -101,7 +104,6 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
             TransitionToState(CharacterState.Default);
 
             playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
-
 
         }
 
@@ -577,18 +579,15 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
             //start footsteps event if the player has an x velocity and is on the ground
             if (Motor.GroundingStatus.IsStableOnGround && Motor.Velocity.x != 0)
             {
-                //get the playback state
-                PLAYBACK_STATE playbackState;
-                playerFootsteps.getPlaybackState(out playbackState);
-                if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+
+                if (timer >= footstepSpeed)
                 {
-                    playerFootsteps.start();
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootsteps, this.transform.position);
+                    timer = 0.0f;
                 }
-            }
-            //otherwise, stop the footsteps event
-            else
-            {
-                playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+
+                timer += Time.deltaTime;
+
             }
         }
 

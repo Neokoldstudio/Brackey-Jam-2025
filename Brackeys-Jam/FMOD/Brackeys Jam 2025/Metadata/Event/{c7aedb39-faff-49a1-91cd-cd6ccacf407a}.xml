@@ -8,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{af345bed-4892-49b9-a6a7-6ee6fd425dfe}</destination>
+			<destination>{5720d539-86d0-4549-8912-640df3bc1253}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{ed9058a7-39b3-4d1f-8c41-d4448b87804a}</destination>
@@ -107,6 +107,7 @@
 	<object class="MixerBusEffectChain" id="{63b0274d-4d93-43eb-9aa3-7ea05b6d8ccf}">
 		<relationship name="effects">
 			<destination>{511b8003-bb57-4e74-9221-e99e7f4b0472}</destination>
+			<destination>{898be4ac-0be3-4f4e-87c1-0753a2c49f83}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9a90b737-af92-41ce-a677-b8a4346f59fa}" />
@@ -117,4 +118,9 @@
 	</object>
 	<object class="MixerBusFader" id="{d435a3b8-0339-40ec-9ee5-5f04ca570d58}" />
 	<object class="MixerBusFader" id="{511b8003-bb57-4e74-9221-e99e7f4b0472}" />
+	<object class="LimiterEffect" id="{898be4ac-0be3-4f4e-87c1-0753a2c49f83}">
+		<property name="boost">
+			<value>4.30000019</value>
+		</property>
+	</object>
 </objects>

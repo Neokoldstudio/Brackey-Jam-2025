@@ -1,6 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8051272670724569303
+--- !u!114 &-5792756593222048959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Main Level.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank
+  Name: Main Level
+  StudioPath: bank:/Main Level
+  lastModified: 638756814031850701
+  FileSizes:
+  - Name: Desktop
+    Value: 317728
+  Exists: 1
+--- !u!114 &-5468704975923641094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,23 +30,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/NailGunShot
+  m_Name: event:/Ambience/Submarine Ambience
   m_EditorClassIdentifier: 
-  Path: event:/NailGunShot
+  Path: event:/Ambience/Submarine Ambience
   Guid:
-    Data1: -1338287583
-    Data2: 1296491635
-    Data3: 1154273191
-    Data4: 320626078
+    Data1: 1938198109
+    Data2: 1163338889
+    Data3: -1517043288
+    Data4: -1452060142
   Banks:
-  - {fileID: 1404675983385182642}
-  IsStream: 0
+  - {fileID: -5792756593222048959}
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 23000
 --- !u!114 &-5342852862996881151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +62,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638756047548942056
+  lastModified: 638756809631915413
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -62,12 +82,12 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638756047548962333
+  lastModified: 638756809631945398
   FileSizes:
   - Name: Desktop
-    Value: 906
+    Value: 1036
   Exists: 1
---- !u!114 &-1133756751262074073
+--- !u!114 &-1085482612364174352
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,36 +97,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PlayerFootsteps
+  m_Name: event:/Gun/GlueGunShot
   m_EditorClassIdentifier: 
-  Path: event:/PlayerFootsteps
-  Guid:
-    Data1: -454744193
-    Data2: 1236996075
-    Data3: -1032699741
-    Data4: 1715105108
-  Banks:
-  - {fileID: 1404675983385182642}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1000
---- !u!114 &-54695883031046777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/GlueGunShot
-  m_EditorClassIdentifier: 
-  Path: event:/GlueGunShot
+  Path: event:/Gun/GlueGunShot
   Guid:
     Data1: -944841927
     Data2: 1235352319
@@ -137,16 +130,18 @@ MonoBehaviour:
   - {fileID: -2130328015297926904}
   - {fileID: -5342852862996881151}
   - {fileID: 1404675983385182642}
+  - {fileID: -5792756593222048959}
   EditorEvents:
-  - {fileID: -1133756751262074073}
-  - {fileID: -8051272670724569303}
-  - {fileID: -54695883031046777}
+  - {fileID: -5468704975923641094}
+  - {fileID: 1913629710744829769}
+  - {fileID: -1085482612364174352}
+  - {fileID: 8464987200674586673}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5342852862996881151}
   StringsBanks:
   - {fileID: -2130328015297926904}
-  cacheTime: 638756051993321703
+  cacheTime: 638756814031850701
   cacheVersion: 131609
 --- !u!114 &1404675983385182642
 MonoBehaviour:
@@ -163,8 +158,62 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638756051993321703
+  lastModified: 638756809632232159
   FileSizes:
   - Name: Desktop
-    Value: 130336
+    Value: 130656
   Exists: 1
+--- !u!114 &1913629710744829769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Gun/NailGunShot
+  m_EditorClassIdentifier: 
+  Path: event:/Gun/NailGunShot
+  Guid:
+    Data1: -1338287583
+    Data2: 1296491635
+    Data3: 1154273191
+    Data4: 320626078
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8464987200674586673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlayerFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlayerFootsteps
+  Guid:
+    Data1: -454744193
+    Data2: 1236996075
+    Data3: -1032699741
+    Data4: 1715105108
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

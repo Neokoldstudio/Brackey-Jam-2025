@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance {  get; private set; }
 
+    private EventInstance ambienceEventInstance;
+
     private void Awake()
     {
         if(instance != null)
@@ -15,6 +17,17 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Found more than one Audio Manager in the scene.");
         }
         instance = this;
+    }
+
+    private void Start()
+    {
+        InitiliazeAmbience(FMODEvents.instance.submarineAmbience);
+    }
+
+    private void InitiliazeAmbience(EventReference ambienceEventReference)
+    {
+        ambienceEventInstance = CreateEventInstance(ambienceEventReference);
+        ambienceEventInstance.start();
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
