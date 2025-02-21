@@ -546,6 +546,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                     if(dot < 0.2f) ScoreManager.Instance.RegisterAction("Wall Bounce");
                     else ScoreManager.Instance.RegisterAction("Bullet Bounce");
                     CinemachineShake.Instance.Shake(1f, 0.1f);
+                    glue.StartBounceAnimation();
                 }
                 return;
             }

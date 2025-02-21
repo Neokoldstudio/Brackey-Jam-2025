@@ -23,16 +23,22 @@ public class glueBullet : MonoBehaviour
     private Collider _SphereCollider;
     private Collider _BoxCollider;
     private Rigidbody _Rigidbody;
+    private Animator _anim;
+    private TrailRenderer _TrailRenderer;
+
     private GlueState _glueState = GlueState.Moving;
 
 
     private void Awake()
     {
+        _anim = gameObject.GetComponent<Animator>();
         _SphereCollider = this.GetComponent<SphereCollider>();
         _BoxCollider = this.GetComponent<BoxCollider>();
         _Rigidbody = this.GetComponent<Rigidbody>();
+        _TrailRenderer = this.GetComponent<TrailRenderer>();
         _SphereCollider.enabled = true;
         _BoxCollider.enabled = false;
+        _anim.enabled = false;
         Invoke("explodeMidAir", maxFlightTime);
     }
 
@@ -52,6 +58,7 @@ public class glueBullet : MonoBehaviour
                     this.transform.up = collision.GetContact(0).normal;
                     StartCoroutine(DestroyAfterTime());
                     _glueState = GlueState.Glued;
+                    _TrailRenderer.enabled = false;
                 }
                 if (collision.gameObject.CompareTag("bullet"))
                 {
@@ -87,6 +94,17 @@ public class glueBullet : MonoBehaviour
     public GlueState GetGlueState()
     {
         return _glueState;
+    }
+
+    public void StartBounceAnimation() 
+    {
+        _anim.enabled = true;
+        _anim.SetTrigger("Bounce");
+    }
+
+    public void deactivateAnimator()
+    {
+        _anim.enabled = false;
     }
 
     private void explodeMidAir()
