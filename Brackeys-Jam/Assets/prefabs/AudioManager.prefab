@@ -89,10 +89,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3743ec918b8161d41aeffd1ac1441f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <submarineAmbience>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <underwaterAmbience>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <nailGunShot>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <glueGunShot>k__BackingField:
     Guid:
       Data1: -944841927
       Data2: 1235352319
       Data3: 1825426833
       Data4: 2051067850
-    Path: event:/GlueShot
+    Path: event:/Gun/GlueGunShot

@@ -15,38 +15,11 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank
   Name: Main Level
   StudioPath: bank:/Main Level
-  lastModified: 638757305968006979
+  lastModified: 638757702460488679
   FileSizes:
   - Name: Desktop
-    Value: 317728
+    Value: 513408
   Exists: 1
---- !u!114 &-5468704975923641094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Submarine Ambience
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience/Submarine Ambience
-  Guid:
-    Data1: 1938198109
-    Data2: 1163338889
-    Data3: -1517043288
-    Data4: -1452060142
-  Banks:
-  - {fileID: -5792756593222048959}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 23000
 --- !u!114 &-5342852862996881151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +35,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638755644176487134
+  lastModified: 638757702460588088
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -82,10 +55,10 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638757305968017028
+  lastModified: 638757702460618083
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1076
   Exists: 1
 --- !u!114 &-1085482612364174352
 MonoBehaviour:
@@ -132,17 +105,43 @@ MonoBehaviour:
   - {fileID: 1404675983385182642}
   - {fileID: -5792756593222048959}
   EditorEvents:
-  - {fileID: -5468704975923641094}
   - {fileID: 1913629710744829769}
   - {fileID: -1085482612364174352}
   - {fileID: 8464987200674586673}
+  - {fileID: 5971838888363830994}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5342852862996881151}
   StringsBanks:
   - {fileID: -2130328015297926904}
-  cacheTime: 638757305968037043
+  cacheTime: 638757702462321563
   cacheVersion: 131609
+--- !u!114 &512757992024267402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience/Submerged
+  m_EditorClassIdentifier: 
+  Name: Submerged
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 676504924
+    data2: 4209544578
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - NotSubmerged
+  - IsSubmerged
+  Exists: 1
 --- !u!114 &1404675983385182642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +157,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638757305968037043
+  lastModified: 638757702462321563
   FileSizes:
   - Name: Desktop
     Value: 130656
@@ -187,6 +186,34 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5971838888363830994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience
+  Guid:
+    Data1: 1938198109
+    Data2: 1163338889
+    Data3: -1517043288
+    Data4: -1452060142
+  Banks:
+  - {fileID: -5792756593222048959}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 512757992024267402}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
