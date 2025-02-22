@@ -58,6 +58,7 @@ public class glueBullet : MonoBehaviour
                     this.transform.up = collision.GetContact(0).normal;
                     StartCoroutine(DestroyAfterTime());
                     _glueState = GlueState.Glued;
+                    StartBounceAnimation();
                     _TrailRenderer.enabled = false;
                 }
                 if (collision.gameObject.CompareTag("bullet"))
