@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7609172751758721395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Brackeys Jam 2025/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638757801009208711
+  FileSizes:
+  - Name: Desktop
+    Value: 631552
+  Exists: 1
+--- !u!114 &-6593841711061814127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/JumpInWater
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/JumpInWater
+  Guid:
+    Data1: -10741141
+    Data2: 1186636320
+    Data3: 1050403464
+    Data4: -563113167
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5792756593222048959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,12 +62,12 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank
   Name: Main Level
   StudioPath: bank:/Main Level
-  lastModified: 638757305968006979
+  lastModified: 638757800996634104
   FileSizes:
   - Name: Desktop
-    Value: 317728
+    Value: 513120
   Exists: 1
---- !u!114 &-5468704975923641094
+--- !u!114 &-5431983291483691335
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,23 +77,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Submarine Ambience
+  m_Name: event:/SFX/DolphinJump
   m_EditorClassIdentifier: 
-  Path: event:/Ambience/Submarine Ambience
+  Path: event:/SFX/DolphinJump
   Guid:
-    Data1: 1938198109
-    Data2: 1163338889
-    Data3: -1517043288
-    Data4: -1452060142
+    Data1: -1209216236
+    Data2: 1317606596
+    Data3: -848397689
+    Data4: -666973762
   Banks:
-  - {fileID: -5792756593222048959}
-  IsStream: 1
+  - {fileID: 1404675983385182642}
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 23000
+  Length: 0
 --- !u!114 &-5342852862996881151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,11 +109,38 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638755644176487134
+  lastModified: 638757800996704432
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1486
   Exists: 1
+--- !u!114 &-5244355449142486745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Main Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Main Theme
+  Guid:
+    Data1: -1448500712
+    Data2: 1329259340
+    Data3: -455163205
+    Data4: 1241386459
+  Banks:
+  - {fileID: -7609172751758721395}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48000
 --- !u!114 &-2130328015297926904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,10 +156,10 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638757305968017028
+  lastModified: 638757800996714417
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1468
   Exists: 1
 --- !u!114 &-1085482612364174352
 MonoBehaviour:
@@ -131,18 +205,50 @@ MonoBehaviour:
   - {fileID: -5342852862996881151}
   - {fileID: 1404675983385182642}
   - {fileID: -5792756593222048959}
+  - {fileID: -7609172751758721395}
   EditorEvents:
-  - {fileID: -5468704975923641094}
   - {fileID: 1913629710744829769}
   - {fileID: -1085482612364174352}
   - {fileID: 8464987200674586673}
+  - {fileID: 5971838888363830994}
+  - {fileID: -5431983291483691335}
+  - {fileID: 1811523339166996928}
+  - {fileID: -6593841711061814127}
+  - {fileID: 6034930379244790401}
+  - {fileID: -5244355449142486745}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5342852862996881151}
   StringsBanks:
   - {fileID: -2130328015297926904}
-  cacheTime: 638757305968037043
+  cacheTime: 638757801009208711
   cacheVersion: 131609
+--- !u!114 &512757992024267402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambience/Submerged
+  m_EditorClassIdentifier: 
+  Name: Submerged
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 676504924
+    data2: 4209544578
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - NotSubmerged
+  - IsSubmerged
+  Exists: 1
 --- !u!114 &1404675983385182642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,11 +264,38 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638757305968037043
+  lastModified: 638757800997026786
   FileSizes:
   - Name: Desktop
-    Value: 130656
+    Value: 292896
   Exists: 1
+--- !u!114 &1811523339166996928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Jump
+  Guid:
+    Data1: -1006031816
+    Data2: 1087653736
+    Data3: -1374569847
+    Data4: -1673259591
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1913629710744829769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +314,61 @@ MonoBehaviour:
     Data2: 1296491635
     Data3: 1154273191
     Data4: 320626078
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5971838888363830994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Ambience
+  Guid:
+    Data1: 1938198109
+    Data2: 1163338889
+    Data3: -1517043288
+    Data4: -1452060142
+  Banks:
+  - {fileID: -5792756593222048959}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 512757992024267402}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6034930379244790401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlayerJumpLand
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlayerJumpLand
+  Guid:
+    Data1: 2013516057
+    Data2: 1199686729
+    Data3: -814588797
+    Data4: -462154579
   Banks:
   - {fileID: 1404675983385182642}
   IsStream: 0

@@ -93,6 +93,7 @@ public class Gun : MonoBehaviour
             playerRb.AddForce(-direction * recoilForce, ForceMode.Impulse);
         }
 
+        //play glue gun shot sound
         AudioManager.instance.PlayOneShot(FMODEvents.instance.glueGunShot, this.transform.position);
 
         Invoke(nameof(ResetShot), timeBetweenShooting);
@@ -119,6 +120,7 @@ public class Gun : MonoBehaviour
             Instantiate(rayMuzzleFlashPrefab, attackPoint.position, Quaternion.identity);
         }
 
+        //play nail gun shot sound
         AudioManager.instance.PlayOneShot(FMODEvents.instance.nailGunShot, this.transform.position);
 
         Invoke(nameof(ResetHitscanShot), hitscanTimeBetweenShots);
