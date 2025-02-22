@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{f754760c-a931-4156-8be8-4f3e63f28f32}">
+	<object class="AudioFile" id="{fbc5e95d-e159-48b3-9f80-30139587aadc}">
 		<property name="assetPath">
-			<value>SFX/Gun/Gun Shot Nail.ogg</value>
+			<value>Main OST_DRAFT 1.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1</value>
+			<value>48</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{634bf435-c659-4798-b109-ab10822d016c}</destination>
