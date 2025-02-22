@@ -3031,6 +3031,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
+      propertyPath: <playerJump>k__BackingField.Path
+      value: event:/SFX/Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
       propertyPath: <glueGunShot>k__BackingField.Path
       value: event:/Gun/GlueGunShot
       objectReference: {fileID: 0}
@@ -3041,8 +3046,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
+      propertyPath: <playerJumpLand>k__BackingField.Path
+      value: event:/SFX/PlayerJumpLand
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
       propertyPath: <playerFootsteps>k__BackingField.Path
       value: event:/SFX/PlayerFootsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJump>k__BackingField.Guid.Data1
+      value: -1006031816
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJump>k__BackingField.Guid.Data2
+      value: 1087653736
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJump>k__BackingField.Guid.Data3
+      value: -1374569847
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJump>k__BackingField.Guid.Data4
+      value: -1673259591
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
@@ -3066,8 +3096,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
+      propertyPath: <playerDolphinJump>k__BackingField.Path
+      value: event:/SFX/DolphinJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJumpInWater>k__BackingField.Path
+      value: event:/SFX/JumpInWater
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
       propertyPath: <submarineAmbience>k__BackingField.Path
       value: event:/Ambience/Ambience
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJumpLand>k__BackingField.Guid.Data1
+      value: 2013516057
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJumpLand>k__BackingField.Guid.Data2
+      value: 1199686729
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJumpLand>k__BackingField.Guid.Data3
+      value: -814588797
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJumpLand>k__BackingField.Guid.Data4
+      value: -462154579
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
@@ -3088,6 +3148,46 @@ PrefabInstance:
         type: 3}
       propertyPath: <playerFootsteps>k__BackingField.Guid.Data4
       value: 1715105108
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerDolphinJump>k__BackingField.Guid.Data1
+      value: -1209216236
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerDolphinJump>k__BackingField.Guid.Data2
+      value: 1317606596
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerDolphinJump>k__BackingField.Guid.Data3
+      value: -848397689
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerDolphinJump>k__BackingField.Guid.Data4
+      value: -666973762
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJumpInWater>k__BackingField.Guid.Data1
+      value: -10741141
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJumpInWater>k__BackingField.Guid.Data2
+      value: 1186636320
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJumpInWater>k__BackingField.Guid.Data3
+      value: 1050403464
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
+        type: 3}
+      propertyPath: <playerJumpInWater>k__BackingField.Guid.Data4
+      value: -563113167
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}

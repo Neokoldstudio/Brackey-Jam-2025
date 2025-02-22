@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
         ambienceEventInstance.start();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (GameManager.Instance.isPlayerUnderwater())
         {
@@ -51,7 +51,6 @@ public class AudioManager : MonoBehaviour
         float submergedValue = (float)submerged;
 
         ambienceEventInstance.setParameterByName("Submerged", submergedValue);
-
 
     }
 

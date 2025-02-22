@@ -76,6 +76,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
         private bool _crouchInputIsHeld = false;
         private bool _jumpRequested = false;
         private bool _jumpConsumed = false;
+        private bool _hasJumped = false;
         private bool _doubleJumpConsumed = false;
         private bool _jumpedThisFrame = false;
         private bool _canWallJump = false;
@@ -89,11 +90,10 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
         private float _lastSwimmingExitTime = -1f;
         public float SwimmingExitCooldown = 1f; // Cooldown in seconds
 
+        //audio
         private float timer = 0.0f;
         private float footstepSpeed = 0.35f;
-
-        //audio
-        private EventInstance playerFootsteps;
+        private bool _wasAirborne = false;    
 
         private void Start()
         {
@@ -102,9 +102,6 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
 
             // Handle initial state
             TransitionToState(CharacterState.Default);
-
-            playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
-
         }
 
         private void FixedUpdate()
@@ -311,7 +308,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                             // Smooth movement Velocity
                             currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1 - Mathf.Exp(-StableMovementSharpness * deltaTime));
                         }
-                        else 
+                        else
                         {
                             // Add move input
                             if (_moveInputVector.sqrMagnitude > 0f)
@@ -378,9 +375,14 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
 
                                     // Add to the return velocity and reset jump state
                                     currentVelocity += (jumpDirection * JumpSpeed) - Vector3.Project(currentVelocity, Motor.CharacterUp);
+
+                                    //play jump audio
+                                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerJump, this.transform.position);
+
                                     _jumpRequested = false;
                                     _jumpConsumed = true;
                                     _jumpedThisFrame = true;
+                                    _hasJumped = true;
                                 }
                             }
 
@@ -394,6 +396,17 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                             currentVelocity += _internalVelocityAdd;
                             _internalVelocityAdd = Vector3.zero;
                         }
+
+                        //Check if player was airborne and play landing sound if so
+                        if (_wasAirborne && Motor.GroundingStatus.IsStableOnGround)
+                        {
+                            AudioManager.instance.PlayOneShot(FMODEvents.instance.playerJumpLand, this.transform.position);
+                        }
+                            
+
+                        //Track if the player is currently airborne or not for the next frame
+                        _wasAirborne = !Motor.GroundingStatus.IsStableOnGround;
+                        
                         break;
                     }
                 case CharacterState.Swimming:
@@ -404,6 +417,12 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                         Vector3 targetMovementVelocity = (_moveInputVector + (Motor.CharacterUp * verticalInput)).normalized * SwimmingSpeed;
                         Vector3 smoothedVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1 - Mathf.Exp(-SwimmingMovementSharpness * deltaTime));
 
+                        if(_hasJumped)
+                        {
+                            AudioManager.instance.PlayOneShot(FMODEvents.instance.playerJumpInWater, this.transform.position);
+
+                            _hasJumped = false;
+                        }
                         // See if our swimming reference point would be out of water after the movement from our velocity has been applied
                         {
                             Vector3 resultingSwimmingReferancePosition = Motor.TransientPosition + (smoothedVelocity * deltaTime) + (SwimmingReferencePoint.position - Motor.TransientPosition);
@@ -422,11 +441,14 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                                     if (Motor.Velocity.y >= 7.5f && (Mathf.Abs(Motor.Velocity.x) > HorizontalVelocityThreshold || Mathf.Abs(Motor.Velocity.z) > HorizontalVelocityThreshold))
                                     {
                                         smoothedVelocity += (Motor.CharacterUp * JumpSpeed * ImpulseMultiplier) - Vector3.Project(currentVelocity, Motor.CharacterUp);
+                                        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDolphinJump, this.transform.position);
                                         ScoreManager.Instance.RegisterAction("Dolphin Jump");
+                                        _hasJumped = true;
                                     }
                                     else
                                     {
                                         smoothedVelocity += (Motor.CharacterUp * JumpSpeed) - Vector3.Project(currentVelocity, Motor.CharacterUp);
+                                        _hasJumped = true;
                                     }
                                 }
                             }
@@ -454,6 +476,8 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                             if (_jumpRequested && _timeSinceJumpRequested > JumpPreGroundingGraceTime)
                             {
                                 _jumpRequested = false;
+                                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerJumpLand, this.transform.position);
+
                             }
 
                             if (AllowJumpingWhenSliding ? Motor.GroundingStatus.FoundAnyGround : Motor.GroundingStatus.IsStableOnGround)
@@ -589,7 +613,6 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                 }
 
                 timer += Time.deltaTime;
-
             }
         }
 

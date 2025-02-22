@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6593841711061814127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/JumpInWater
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/JumpInWater
+  Guid:
+    Data1: -10741141
+    Data2: 1186636320
+    Data3: 1050403464
+    Data4: -563113167
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5792756593222048959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,11 +42,38 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank
   Name: Main Level
   StudioPath: bank:/Main Level
-  lastModified: 638757702460488679
+  lastModified: 638757731075882177
   FileSizes:
   - Name: Desktop
-    Value: 513408
+    Value: 513120
   Exists: 1
+--- !u!114 &-5431983291483691335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/DolphinJump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/DolphinJump
+  Guid:
+    Data1: -1209216236
+    Data2: 1317606596
+    Data3: -848397689
+    Data4: -666973762
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5342852862996881151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,7 +89,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638757702460588088
+  lastModified: 638757746088478983
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -55,10 +109,10 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638757702460618083
+  lastModified: 638757746088504127
   FileSizes:
   - Name: Desktop
-    Value: 1076
+    Value: 1266
   Exists: 1
 --- !u!114 &-1085482612364174352
 MonoBehaviour:
@@ -109,12 +163,16 @@ MonoBehaviour:
   - {fileID: -1085482612364174352}
   - {fileID: 8464987200674586673}
   - {fileID: 5971838888363830994}
+  - {fileID: -5431983291483691335}
+  - {fileID: 1811523339166996928}
+  - {fileID: -6593841711061814127}
+  - {fileID: 6034930379244790401}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5342852862996881151}
   StringsBanks:
   - {fileID: -2130328015297926904}
-  cacheTime: 638757702462321563
+  cacheTime: 638757746089345961
   cacheVersion: 131609
 --- !u!114 &512757992024267402
 MonoBehaviour:
@@ -157,11 +215,38 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638757702462321563
+  lastModified: 638757746089345961
   FileSizes:
   - Name: Desktop
-    Value: 130656
+    Value: 289792
   Exists: 1
+--- !u!114 &1811523339166996928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Jump
+  Guid:
+    Data1: -1006031816
+    Data2: 1087653736
+    Data3: -1374569847
+    Data4: -1673259591
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1913629710744829769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +299,33 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 512757992024267402}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6034930379244790401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlayerJumpLand
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlayerJumpLand
+  Guid:
+    Data1: 2013516057
+    Data2: 1199686729
+    Data3: -814588797
+    Data4: -462154579
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
