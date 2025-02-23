@@ -77,6 +77,10 @@ public class glueBullet : MonoBehaviour
                     StartCoroutine(ShrinkAndDestroy());
                     ScoreManager.Instance.RegisterAction("Bullet Defflected");
                 }
+                if (collision.gameObject.CompareTag("gluedEnemy"))
+                {
+                    StartCoroutine(ShrinkAndDestroy());
+                }
                 break;
 
             case GlueState.Glued:

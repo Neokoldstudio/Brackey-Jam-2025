@@ -21,7 +21,7 @@ public class gluedEnemy :Entity
 
     public override void GetHit(float damage)
     {
-        Explode();
+        base.GetHit(damage);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,34 +34,22 @@ public class gluedEnemy :Entity
         }
     }
 
-    private void Explode()
-    {
-        //Instantiate(Enemy, transform.position, Quaternion.identity);
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
-        foreach (Collider nearbyObject in colliders)
-        {
-            if (nearbyObject.tag == "enemies")
-            {
-                nearbyObject.GetComponent<PlayerManager>().GetHit(explosionDamage);
-            }
-            if (nearbyObject.tag == "Player")
-            { 
-                nearbyObject.GetComponent<PlayerManager>().GetHit(playerExplosionDamage);
-            }
-        }
-        CinemachineShake.Instance.Shake(1f, 0.5f);
-        ScoreManager.Instance.RegisterAction("Boom !!");
-        Die();
-    }
-
     private IEnumerator UnglueAfterTime()
     {
+        Vector3 originalScale = shell.localScale;
         float timer = 0;
+
+        while (timer < 2f)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        timer = 0;
 
         while (timer < unglueTime)
         {
             timer += Time.deltaTime;
-            shell.localScale = Vector3.one * (1 - (timer / unglueTime));
+            shell.localScale = Vector3.Lerp(originalScale, Vector3.zero, timer / unglueTime);
             yield return null;
         }
 

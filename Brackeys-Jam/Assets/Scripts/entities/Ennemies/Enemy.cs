@@ -125,7 +125,7 @@ public class Enemy : Entity
         isAttacking = true;
         // Attack logic (e.g., instantiate bullet, play animation, etc.)
         Vector3 direction = (player.position - transform.position).normalized;
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.LookRotation(direction));
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.LookRotation(direction) * Quaternion.Euler(90, 0, 0));
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
 
         if (bulletRb)
@@ -147,7 +147,8 @@ public class Enemy : Entity
 
             if (gluedRb)
             {
-                gluedRb.velocity = collision.gameObject.GetComponent<Rigidbody>().velocity * 1000f;
+                Debug.Log("force added");
+                gluedRb.AddForce(collision.relativeVelocity, ForceMode.Impulse);
             }
             ScoreManager.Instance.RegisterAction("Ennemy Glued !");
             Destroy(collision.gameObject);

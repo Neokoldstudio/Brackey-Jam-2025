@@ -8,6 +8,7 @@ TagManager:
   - hole
   - enemyBullet
   - enemies
+  - gluedEnemy
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Player
   - bullet
   - enemies
-  - 
+  - glueShell
   - 
   - 
   - 
