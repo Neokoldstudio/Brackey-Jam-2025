@@ -45,7 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelDuration: 60
-  playerScore: 0
   holeSpawners: []
-  maxActiveHoles: 10
-  spawnInterval: 5
+  baseSpawnInterval: 12

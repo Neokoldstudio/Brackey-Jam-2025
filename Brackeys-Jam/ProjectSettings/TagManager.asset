@@ -9,6 +9,7 @@ TagManager:
   - enemyBullet
   - enemies
   - gluedEnemy
+  - water
   layers:
   - Default
   - TransparentFX

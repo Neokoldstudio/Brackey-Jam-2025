@@ -19,7 +19,7 @@ public class Enemy : Entity
     public float shootForce = 10f;
     public GameObject gluedEnemy;
 
-
+    private Material material;
     private Transform player;
     private Vector3 wanderTarget;
     private bool canAttack = true;
@@ -29,6 +29,7 @@ public class Enemy : Entity
     {
         base.Awake();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().GetPlayerTarget();
+        material = GetComponentInChildren<Renderer>().material;
         SetNewWanderTarget();
     }
 
@@ -45,6 +46,12 @@ public class Enemy : Entity
         {
             Wander();
         }
+    }
+
+    public override void GetHit(float damage)
+    {
+        StartCoroutine(Flash());
+        base.GetHit(damage);
     }
 
     private void Wander()
@@ -154,5 +161,13 @@ public class Enemy : Entity
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator Flash()
+    {
+        Color originalColor = material.color;
+        material.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        material.color = originalColor;
     }
 }

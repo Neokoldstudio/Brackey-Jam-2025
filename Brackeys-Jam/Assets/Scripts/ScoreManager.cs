@@ -8,18 +8,19 @@ public class ScoreManager : MonoBehaviour
 
     private float score;
     private float styleMultiplier = 1.0f;
-    public float minMultiplier = 0.5f;
+    public float minMultiplier = 1.0f;
     public float maxMultiplier = 5.0f;
     public float comboDecayTimer = 3.0f;
     public float multiplierDecayTime = 1.5f;
     private float lastActionTime;
+    private float lastMultiplierTime;
     private string previousAction = "";
     private bool canUpdate = true;
 
     private int currentRank = 0;
 
-    public string[] ranks = { "DULL", "MESSY", "SAVAGE", "INSANE", "ULTRA" };
-    public float[] thresholds = { 500, 1500, 3000, 6000, 10000 };
+    private string[] ranks = { "DULL", "MESSY", "COOL", "STYLISH", "INSANE", "ULTRA" };
+    private float[] thresholds = { 500, 1500, 3000, 6000, 10000, 15000 };
     public float[] rankDecayRate = { 5, 10, 15, 20, 25 }; // Points lost per second when inactive
     public float[] multiplierDecayRate = { 0.1f, 0.2f, 0.3f, 0.4f, 0.5f };
 
@@ -58,6 +59,7 @@ public class ScoreManager : MonoBehaviour
         if (canUpdate)
         {
             float timeSinceLastAction = Time.time - lastActionTime;
+            float timeSinceLastMult = Time.time - lastMultiplierTime;
 
             // Decay rank if no recent action
             if (timeSinceLastAction > comboDecayTimer)
@@ -66,20 +68,19 @@ public class ScoreManager : MonoBehaviour
                 UpdateRank();
             }
 
-            if (timeSinceLastAction > multiplierDecayTime)
+            if (timeSinceLastMult > multiplierDecayTime)
             {
                 styleMultiplier = Mathf.Max(minMultiplier, styleMultiplier - multiplierDecayRate[currentRank] * Time.deltaTime);
             }
-
-            UIManager.Instance.UpdateRank(ranks[currentRank]);
         }
-        
     }
 
     public void RegisterAction(string action)
     {
         if (actionValues.ContainsKey(action))
         {
+            var (basePoints, Multiplier) = (currentActionValues[action], actionValues[action].bonusMultiplier);
+
             if (action == previousAction)
             {
                 currentActionValues[action] *= 0.5f;
@@ -87,14 +88,14 @@ public class ScoreManager : MonoBehaviour
             else
             {
                 currentActionValues[action] = actionValues[action].basePoints;
+                lastMultiplierTime = Time.time;
+                styleMultiplier += Multiplier;
             }
 
             previousAction = action;
 
-            var (basePoints, Multiplier) = (currentActionValues[action], actionValues[action].bonusMultiplier);
-
             score += basePoints * styleMultiplier;
-            styleMultiplier += Multiplier;
+            
             styleMultiplier = Mathf.Clamp(styleMultiplier, minMultiplier, maxMultiplier);
             lastActionTime = Time.time;
             Debug.Log(basePoints);

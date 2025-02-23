@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public List<HoleSpawner> holeSpawners = new List<HoleSpawner>();
     private GameObject Player;
     private int maxActiveHoles;
-    public float spawnInterval = 5f;
+    public float[] baseSpawnIntervals = {12f,11f,10f,8f,4f,2f};
+    private float spawnInterval;
     private float spawnTimer;
 
     private void Awake()
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleHoleSpawning()
     {
+        spawnInterval = baseSpawnIntervals[ScoreManager.Instance.GetRank()];
         if (spawnTimer > 0)
         {
             spawnTimer -= Time.deltaTime;
@@ -117,13 +119,13 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
-        ScoreManager.Instance.FreezeScore();
         EndLevel();
         // Implement level transition logic here
     }
 
     private void EndLevel()
     {
+        ScoreManager.Instance.FreezeScore();
         SceneManager.LoadScene(SceneManager.loadedSceneCount+1);
     }
 }

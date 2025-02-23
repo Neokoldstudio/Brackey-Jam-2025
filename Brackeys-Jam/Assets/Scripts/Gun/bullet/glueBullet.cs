@@ -81,6 +81,10 @@ public class glueBullet : MonoBehaviour
                 {
                     StartCoroutine(ShrinkAndDestroy());
                 }
+                if (collision.gameObject.CompareTag("water"))
+                { 
+                    _Rigidbody.velocity = _Rigidbody.velocity.normalized * 10f;
+                }
                 break;
 
             case GlueState.Glued:
