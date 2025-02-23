@@ -33,9 +33,9 @@ public class WaterSystem : MonoBehaviour
             }
 
             waterLevel += (baseGrowthRate + activeHoles * growthPerHole) * Time.deltaTime;
-            Vector3 scale = waterObject.localScale;
-            scale.y = Mathf.Lerp(scale.y, waterLevel, Time.deltaTime);
-            waterObject.localScale = scale;
+            Vector3 pos = waterObject.transform.position;
+            pos.y = Mathf.Lerp(pos.y, waterLevel, Time.deltaTime);
+            waterObject.transform.position = pos;
         }
     }
 

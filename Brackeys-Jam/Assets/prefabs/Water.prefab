@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2104326936093918708}
   - component: {fileID: 7514070507084954621}
   - component: {fileID: 2094605164667808703}
+  - component: {fileID: 2936769631306993011}
+  - component: {fileID: 7846921909547400023}
   m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
@@ -85,7 +87,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1625f63737c872043b06db73c8670208, type: 2}
+  - {fileID: 2100000, guid: d55371740e699f6409e46df1a2ce3022, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,11 +122,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterObject: {fileID: 9200069991182547594}
-  maxWaterHeight: 10
-  baseWaterLevel: 66
+  maxWaterHeight: -25.5
+  baseWaterLevel: -46.6
   baseGrowthRate: 0.1
   growthPerHole: 0.1
   waterPlane: {fileID: 2229058077405089843}
+--- !u!114 &2936769631306993011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558981632735588066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0666b59ab499ec742a634f5adb3c5a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextureSize: 512
+  ObjectsRT: {fileID: 8400000, guid: 43e2b9607b42991478d8484af3059a23, type: 2}
+  RippleShader: {fileID: 4800000, guid: 171fc69180fc6ae479dfe8aba39b2ca0, type: 3}
+  AddShader: {fileID: 4800000, guid: cd3c1dfcfb6ed2d4db0bb0b1664796a5, type: 3}
+--- !u!114 &7846921909547400023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558981632735588066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 0.2
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: d2aa71af99432524883a7b54e52672f1, type: 2}
 --- !u!1 &7067862156090117827
 GameObject:
   m_ObjectHideFlags: 0
