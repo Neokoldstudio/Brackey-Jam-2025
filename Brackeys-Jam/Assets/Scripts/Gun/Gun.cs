@@ -93,6 +93,7 @@ public class Gun : MonoBehaviour
             playerRb.AddForce(-direction * recoilForce, ForceMode.Impulse);
         }
 
+        CinemachineShake.Instance.Shake(1f, 0.1f);
         //play glue gun shot sound
         AudioManager.instance.PlayOneShot(FMODEvents.instance.glueGunShot, this.transform.position);
 
@@ -122,7 +123,7 @@ public class Gun : MonoBehaviour
 
         //play nail gun shot sound
         AudioManager.instance.PlayOneShot(FMODEvents.instance.nailGunShot, this.transform.position);
-
+        CinemachineShake.Instance.Shake(1f, 0.3f);
         Invoke(nameof(ResetHitscanShot), hitscanTimeBetweenShots);
 
         if (hitscanBulletsLeft <= 0)

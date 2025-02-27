@@ -20,6 +20,11 @@ public class Hole : MonoBehaviour
     public void Die()
     {
         StartCoroutine(ShrinkAndDestroy());
+        if (ScoreManager.Instance.GetAirTime() > 1.0f)
+        { 
+            ScoreManager.Instance.RegisterAction("Airborne Plucking!");
+
+        }
         ScoreManager.Instance.RegisterAction("Hole Plucked");
     }
 

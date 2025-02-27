@@ -3,7 +3,6 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,8 +11,10 @@ public class UIManager : MonoBehaviour
     public TMP_Text actionStackText;
     public TMP_Text scoreText;
     public TMP_Text multiplierText;
-    public Image rankProgressBar; // Progress bar UI element
-    public Gradient rankGradient; // Color gradient for rank text
+    public TMP_Text airTimeText;
+    public GameObject progressBarContainer;
+    public Image rankProgressBar;
+    public Gradient multiplierGradient; // Gradient for multiplier text
 
     private float displayScore;
     private float displayMultiplier;
@@ -21,7 +22,6 @@ public class UIManager : MonoBehaviour
     private Dictionary<string, Coroutine> actionCoroutines = new Dictionary<string, Coroutine>();
     private const int maxActions = 5;
     private const float actionFadeTime = 2.0f;
-    private const float shakeIntensity = 5.0f;
 
     private string[] ranks = { "DULL", "MESSY", "COOL", "STYLISH", "INSANE", "ULTRA" };
     private float[] thresholds = { 500, 1500, 3000, 6000, 10000, 15000 };
@@ -38,33 +38,43 @@ public class UIManager : MonoBehaviour
         displayMultiplier = Mathf.Lerp(displayMultiplier, ScoreManager.Instance.GetMultiplier(), Time.deltaTime * 5);
 
         scoreText.text = Mathf.RoundToInt(displayScore).ToString();
-        multiplierText.text = "x" + displayMultiplier.ToString("0.0");
+        multiplierText.text = displayMultiplier>1.01 ? "x" + displayMultiplier.ToString("0.00") : "";
+
+        // Apply gradient color to the multiplier based on its value
+        float maxMultiplier = ScoreManager.Instance.GetMaxMultiplier();
+        float normalizedMultiplier = Mathf.Clamp01((displayMultiplier-1)/(maxMultiplier-1));
+        multiplierText.color = multiplierGradient.Evaluate(normalizedMultiplier);
+
+        if (ScoreManager.Instance.GetAirTime() <= 1.0f)
+        {
+            airTimeText.text = "";
+        }
+        else
+        {
+            airTimeText.text = "Air Time: " + ScoreManager.Instance.GetAirTime().ToString("0.0");
+        }
 
         UpdateRank(currentScore);
     }
 
     private void UpdateRank(float score)
     {
-        int rankIndex = ScoreManager.Instance.GetRank();
-        rankText.text = ranks[rankIndex];
-        rankText.color = rankGradient.Evaluate(rankIndex / (ranks.Length - 1));
-
-        float progress = Mathf.Clamp01((score - thresholds[rankIndex]) / (thresholds[rankIndex+1] - thresholds[rankIndex]));
-        rankProgressBar.fillAmount = Mathf.Clamp01(progress);
-
-        float shakeAmount = Mathf.Clamp(score / 15000f, 0, 1) * shakeIntensity;
-        StartCoroutine(ShakeText(rankText, shakeAmount));
-    }
-
-    private IEnumerator ShakeText(TMP_Text text, float intensity)
-    {
-        Vector3 originalPos = text.transform.localPosition;
-        for (int i = 0; i < 10; i++)
+        if (score < thresholds[0])
         {
-            text.transform.localPosition = originalPos + (Vector3)Random.insideUnitCircle * intensity;
-            yield return new WaitForSeconds(0.02f);
+            progressBarContainer.SetActive(false);
         }
-        text.transform.localPosition = originalPos;
+        else
+        {
+            progressBarContainer.SetActive(true);
+        }
+
+        int rankIndex = ScoreManager.Instance.GetRank();
+        rankText.text = score > thresholds[rankIndex] ? ranks[rankIndex] : "";
+        float progress = (rankIndex < thresholds.Length - 1) ?
+            Mathf.Clamp01((score - thresholds[rankIndex]) / (thresholds[rankIndex + 1] - thresholds[rankIndex])) :
+            Mathf.Clamp01((score - thresholds[rankIndex]) / (20000 - thresholds[rankIndex]));
+
+        rankProgressBar.fillAmount = Mathf.Clamp01(progress);
     }
 
     public void AddAction(string action)
@@ -76,10 +86,6 @@ public class UIManager : MonoBehaviour
         recentActions.Add(action);
         UpdateActionStack();
 
-        if (actionCoroutines.ContainsKey(action))
-        {
-            StopCoroutine(actionCoroutines[action]);
-        }
         Coroutine fadeCoroutine = StartCoroutine(RemoveActionAfterTime(action, actionFadeTime));
         actionCoroutines[action] = fadeCoroutine;
     }

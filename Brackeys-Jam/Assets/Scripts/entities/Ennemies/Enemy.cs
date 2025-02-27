@@ -101,13 +101,9 @@ public class Enemy : Entity
         // Death logic (e.g., play death animation, drop loot, etc.)
         Debug.Log("Enemy died!");
 
-        if (!GameManager.Instance.isPlayerOnGround())
+        if (ScoreManager.Instance.GetAirTime()>=1.0f)
         {
-            if (!GameManager.Instance.isPlayerUnderwater())
-            {
                 ScoreManager.Instance.RegisterAction("Airborne Kill");
-            }
-            else ScoreManager.Instance.RegisterAction("Kill");
         }
         else ScoreManager.Instance.RegisterAction("Kill");
 

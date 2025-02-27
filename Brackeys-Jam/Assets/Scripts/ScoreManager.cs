@@ -10,10 +10,12 @@ public class ScoreManager : MonoBehaviour
     private float styleMultiplier = 1.0f;
     public float minMultiplier = 1.0f;
     public float maxMultiplier = 5.0f;
-    public float comboDecayTimer = 3.0f;
     public float multiplierDecayTime = 1.5f;
+    public float airTimeMultiplier = 1f;
+
     private float lastActionTime;
     private float lastMultiplierTime;
+    private float currentAirTime = 0.0f;
     private string previousAction = "";
     private bool canUpdate = true;
 
@@ -21,6 +23,7 @@ public class ScoreManager : MonoBehaviour
 
     private string[] ranks = { "DULL", "MESSY", "COOL", "STYLISH", "INSANE", "ULTRA" };
     private float[] thresholds = { 500, 1500, 3000, 6000, 10000, 15000 };
+    public float[] ScoreDecayTimer = {};
     public float[] rankDecayRate = { 5, 10, 15, 20, 25 }; // Points lost per second when inactive
     public float[] multiplierDecayRate = { 0.1f, 0.2f, 0.3f, 0.4f, 0.5f };
 
@@ -35,7 +38,8 @@ public class ScoreManager : MonoBehaviour
         {"Airborne Kill", (250, 1.0f)},
         {"Hole Plucked With Enemy !!", (400, 2.0f)},
         {"Bullet Defflected", (20, 0.1f)},
-        {"Ennemy Glued !", (10,0.1f)}
+        {"Ennemy Glued !", (10,0.1f)},
+        {"Airborne Plucking!", (300, 1.5f)}
     };
 
     private Dictionary<string, float> currentActionValues;
@@ -58,11 +62,24 @@ public class ScoreManager : MonoBehaviour
     {
         if (canUpdate)
         {
+            //air time effecting multiplier logic
+            if (!GameManager.Instance.isPlayerOnGround() && !GameManager.Instance.isPlayerUnderwater())
+            {
+                if(currentAirTime> 2.0)styleMultiplier += Time.deltaTime/3;
+                currentAirTime += Time.deltaTime;
+            }
+            else
+            {
+                score += currentAirTime * airTimeMultiplier * styleMultiplier;
+                currentAirTime = 0.0f;
+            }
+            styleMultiplier = Mathf.Clamp(styleMultiplier, minMultiplier, maxMultiplier);
+
             float timeSinceLastAction = Time.time - lastActionTime;
             float timeSinceLastMult = Time.time - lastMultiplierTime;
 
             // Decay rank if no recent action
-            if (timeSinceLastAction > comboDecayTimer)
+            if (timeSinceLastAction > ScoreDecayTimer[currentRank])
             {
                 score = Mathf.Max(0, score - rankDecayRate[currentRank] * Time.deltaTime);
                 UpdateRank();
@@ -148,4 +165,6 @@ public class ScoreManager : MonoBehaviour
     public float GetScore() => score;
     public float GetMultiplier() => styleMultiplier;
     public int GetRank() => currentRank;
+    public float GetAirTime() => currentAirTime;
+    public float GetMaxMultiplier() => maxMultiplier;
 }

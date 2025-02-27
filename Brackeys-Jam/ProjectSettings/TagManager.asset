@@ -10,6 +10,7 @@ TagManager:
   - enemies
   - gluedEnemy
   - water
+  - dangerSign
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - bullet
   - enemies
   - glueShell
-  - 
+  - dangerSign
   - 
   - 
   - 
