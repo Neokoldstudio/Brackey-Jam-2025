@@ -44,30 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d16fca49f94064483417393296f653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMultiplier: 0.5
+  minMultiplier: 1
   maxMultiplier: 5
-  comboDecayTimer: 3
   multiplierDecayTime: 1.5
-  ranks:
-  - DULL
-  - MESSY
-  - SAVAGE
-  - INSANE
-  - ULTRA
-  thresholds:
-  - 500
-  - 1500
-  - 3000
-  - 6000
-  - 10000
-  - 15000
+  airTimeMultiplier: 1
+  ScoreDecayTimer:
+  - 3
+  - 2.5
+  - 2
+  - 1.5
+  - 1
+  - 0
   rankDecayRate:
   - 5
   - 50
   - 150
   - 200
   - 400
-  - 600
+  - 1000
   multiplierDecayRate:
   - 0.1
   - 0.15
