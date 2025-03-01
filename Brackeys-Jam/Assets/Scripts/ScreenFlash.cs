@@ -5,6 +5,7 @@ using System.Collections;
 public class ScreenFlash : MonoBehaviour
 {
     public Image flashImage;  // Assign the UI Image in Inspector
+    public Color[] flashColors;  // Colors to flash
     public float flashDuration = 0.2f;  // How long the flash lasts
     public float maxAlpha = 0.5f;  // How bright the flash is
 
@@ -28,7 +29,7 @@ public class ScreenFlash : MonoBehaviour
         {
             timer += Time.deltaTime;
             float alpha = Mathf.Lerp(0, maxAlpha, timer / (flashDuration / 2));
-            flashImage.color = new Color(flashImage.color.r, flashImage.color.g, flashImage.color.b, alpha);
+            flashImage.color = flashColors[Random.Range(0, flashColors.Length)] * alpha;
             yield return null;
         }
 

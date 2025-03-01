@@ -14,19 +14,45 @@ public class CinemachineShake : MonoBehaviour
     public float vertigoAmount = 0.5f;
     public float speedThreshold = 15f;
 
+    public Transform cameraFollowTarget; // The empty object Cinemachine follows
+    private Vector3 originalPosition;
+    private Coroutine shakeCoroutine;
+
     void Awake()
     {
         Instance = this;
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
         virtualCamera.m_Lens.FieldOfView = 75;
+        originalPosition = cameraFollowTarget.localPosition;
     }
 
-    public void Shake(float intensity, float time)
+
+    public void Shake(float intensity, float duration)
     {
-        CinemachineBasicMultiChannelPerlin multiChannelPerlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        multiChannelPerlin.m_AmplitudeGain = intensity;
-        shakeTimer = time;
+        if (shakeCoroutine != null)
+            StopCoroutine(shakeCoroutine);
+
+        shakeCoroutine = StartCoroutine(ShakeCoroutine(intensity, duration));
     }
+
+    private IEnumerator ShakeCoroutine(float intensity, float duration)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * intensity;
+            float y = Random.Range(-1f, 1f) * intensity;
+
+            cameraFollowTarget.localPosition = originalPosition + new Vector3(x, y, 0);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        cameraFollowTarget.localPosition = originalPosition; // Reset after shake
+    }
+
 
     private void Update()
     {

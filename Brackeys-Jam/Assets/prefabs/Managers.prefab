@@ -89,8 +89,223 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashImage: {fileID: 3890822007788544282}
-  flashDuration: 0.2
+  flashColors:
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 1, g: 0.3196501, b: 0, a: 1}
+  - {r: 1, g: 0.88814145, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.5
   maxAlpha: 0.5
+--- !u!1 &1943112661534689117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6641945291477551398}
+  - component: {fileID: 8420441597244356333}
+  - component: {fileID: 6110242934329147925}
+  m_Layer: 5
+  m_Name: HP Ghost Bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6641945291477551398
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943112661534689117}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7215406836475107556}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8420441597244356333
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943112661534689117}
+  m_CullTransparentMesh: 1
+--- !u!114 &6110242934329147925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943112661534689117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3a79b19cd8e7d0e488c39c168da793bb, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2122820201932205280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1615868741731974099}
+  - component: {fileID: 143033498194236102}
+  - component: {fileID: 73799574938360386}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1615868741731974099
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122820201932205280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8310468365269151100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -36.3, y: -6.2}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &143033498194236102
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122820201932205280}
+  m_CullTransparentMesh: 1
+--- !u!114 &73799574938360386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122820201932205280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 100
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: bc75384cf4b7d274094518c3c8f78203, type: 2}
+  m_sharedMaterial: {fileID: 8076696333342207146, guid: bc75384cf4b7d274094518c3c8f78203,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3000038425638842588
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +552,544 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1.5
+--- !u!1 &4676227091754518638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7215406836475107556}
+  - component: {fileID: 2042363413049884712}
+  - component: {fileID: 9183366640102156671}
+  m_Layer: 5
+  m_Name: HP Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7215406836475107556
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4676227091754518638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6641945291477551398}
+  - {fileID: 7129824661550991520}
+  m_Father: {fileID: 8310468365269151100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2042363413049884712
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4676227091754518638}
+  m_CullTransparentMesh: 1
+--- !u!114 &9183366640102156671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4676227091754518638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.31132078, g: 0.29810435, b: 0.29810435, a: 0.5019608}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3a79b19cd8e7d0e488c39c168da793bb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5070367983272289069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8310468365269151100}
+  - component: {fileID: 2741846829398265037}
+  m_Layer: 5
+  m_Name: HealthBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8310468365269151100
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070367983272289069}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.3}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7215406836475107556}
+  - {fileID: 1615868741731974099}
+  m_Father: {fileID: 1170855683570775484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -319.1, y: -167.8}
+  m_SizeDelta: {x: 300, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2741846829398265037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070367983272289069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09da2f98b89e85d4daf792708bdc0f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleBar:
+    _renderType: 0
+    _isAnimated: 1
+    _srBackground: {fileID: 0}
+    _srPrimaryBar: {fileID: 0}
+    _srGhostBar: {fileID: 0}
+    _uiBackground: {fileID: 0}
+    _uiPrimaryBar: {fileID: 0}
+    _uiGhostBar: {fileID: 0}
+    _adaptiveColor: 1
+    _barPrimaryColor: {r: 1, g: 1, b: 1, a: 1}
+    _barAdaptiveColor: {r: 1, g: 0, b: 0, a: 1}
+    _useGhostBar: 1
+    _dualGhostBars: 0
+    _ghostBarDamageColor: {r: 1, g: 0, b: 0, a: 1}
+    _ghostBarHealColor: {r: 1, g: 1, b: 1, a: 1}
+    _damageAnim: 0
+    _damageAnimDuration: 0.5
+    _damageAnimDelay: 0
+    _damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
+    _damageAnimStrength: 0.5
+    _healAnim: 0
+    _healAnimDuration: 0.5
+    _healAnimDelay: 0
+    _healFlashColor: {r: 1, g: 1, b: 1, a: 1}
+    _healAnimStrength: 0.5
+  editorMode: 0
+  animations:
+  - animationType: 0
+    renderType: 0
+    targetImage: {fileID: 4730365737475991055}
+    targetSprite: {fileID: 0}
+    notBar: 0
+    commands:
+    - execution: 0
+      effect: 2
+      duration: 0
+      delay: 0
+      valueMode: 0
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+  - animationType: 0
+    renderType: 0
+    targetImage: {fileID: 6110242934329147925}
+    targetSprite: {fileID: 0}
+    notBar: 0
+    commands:
+    - execution: 0
+      effect: 1
+      duration: 0
+      delay: 0
+      valueMode: 4
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+    - execution: 1
+      effect: 0
+      duration: 0
+      delay: 0
+      valueMode: 4
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+    - execution: 0
+      effect: 1
+      duration: 0.25
+      delay: 0.25
+      valueMode: 0
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 0}
+      percentValue: 0
+      frequency: 10
+      ease: 8
+      animAxis: 0
+      transformProperty: 0
+    - execution: 0
+      effect: 2
+      duration: 0
+      delay: 0
+      valueMode: 0
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+    - execution: 1
+      effect: 1
+      duration: 0
+      delay: 0
+      valueMode: 4
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+  - animationType: 1
+    renderType: 0
+    targetImage: {fileID: 4730365737475991055}
+    targetSprite: {fileID: 0}
+    notBar: 0
+    commands:
+    - execution: 0
+      effect: 2
+      duration: 0
+      delay: 0.5
+      valueMode: 0
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+  - animationType: 1
+    renderType: 0
+    targetImage: {fileID: 6110242934329147925}
+    targetSprite: {fileID: 0}
+    notBar: 0
+    commands:
+    - execution: 0
+      effect: 2
+      duration: 0
+      delay: 0
+      valueMode: 0
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+    - execution: 1
+      effect: 1
+      duration: 0
+      delay: 0
+      valueMode: 0
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+    - execution: 1
+      effect: 0
+      duration: 0
+      delay: 0
+      valueMode: 0
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+    - execution: 0
+      effect: 0
+      duration: 0.25
+      delay: 0.25
+      valueMode: 0
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 0.2, b: 0.20784314, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 8
+      animAxis: 0
+      transformProperty: 0
+  - animationType: 0
+    renderType: 0
+    targetImage: {fileID: 9183366640102156671}
+    targetSprite: {fileID: 0}
+    notBar: 0
+    commands:
+    - execution: 0
+      effect: 3
+      duration: 0
+      delay: 0
+      valueMode: 4
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+    - execution: 0
+      effect: 7
+      duration: 0.5
+      delay: 0
+      valueMode: 0
+      floatValue: 10
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 70
+      ease: 8
+      animAxis: 0
+      transformProperty: 0
+    - execution: 0
+      effect: 5
+      duration: 0
+      delay: 0
+      valueMode: 4
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+  - animationType: 1
+    renderType: 0
+    targetImage: {fileID: 9183366640102156671}
+    targetSprite: {fileID: 0}
+    notBar: 0
+    commands:
+    - execution: 0
+      effect: 3
+      duration: 0
+      delay: 0
+      valueMode: 4
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 0
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+    - execution: 0
+      effect: 7
+      duration: 0.5
+      delay: 0
+      valueMode: 0
+      floatValue: 10
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 70
+      ease: 8
+      animAxis: 0
+      transformProperty: 0
+    - execution: 0
+      effect: 3
+      duration: 0
+      delay: 0
+      valueMode: 4
+      floatValue: 5
+      intValue: 0
+      boolValue: 0
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      colorValue: {r: 1, g: 1, b: 1, a: 1}
+      percentValue: 1
+      frequency: 10
+      ease: 1
+      animAxis: 0
+      transformProperty: 0
+--- !u!1 &7470138464663374364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7129824661550991520}
+  - component: {fileID: 3106684102425356590}
+  - component: {fileID: 4730365737475991055}
+  m_Layer: 5
+  m_Name: HP Bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7129824661550991520
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470138464663374364}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7215406836475107556}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3106684102425356590
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470138464663374364}
+  m_CullTransparentMesh: 1
+--- !u!114 &4730365737475991055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470138464663374364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.2, b: 0.20784314, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3a79b19cd8e7d0e488c39c168da793bb, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8679577532759190356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1837,11 @@ PrefabInstance:
       propertyPath: m_enableVertexGradient
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3406453642693273256, guid: 989bfa8e3f1102f49b298ef06d0ca395,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3524374006199422032, guid: 989bfa8e3f1102f49b298ef06d0ca395,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1385,6 +2143,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4850771679952320203}
+    - targetCorrespondingSourceObject: {fileID: 9113129928719744606, guid: 989bfa8e3f1102f49b298ef06d0ca395,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8310468365269151100}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 989bfa8e3f1102f49b298ef06d0ca395, type: 3}
 --- !u!224 &1170855683570775484 stripped

@@ -5968,11 +5968,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4353896453404184, guid: c75e91cf060bbf04e89204fa400606df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4201179
+      value: -0.026882172
       objectReference: {fileID: 0}
     - target: {fileID: 4353896453404184, guid: c75e91cf060bbf04e89204fa400606df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25041866
+      value: -10.250419
       objectReference: {fileID: 0}
     - target: {fileID: 4353896453404184, guid: c75e91cf060bbf04e89204fa400606df, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6070,6 +6070,11 @@ PrefabInstance:
       propertyPath: m_FrequencyGain
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2431577807537302642, guid: c75e91cf060bbf04e89204fa400606df,
+        type: 3}
+      propertyPath: cameraFollowTarget
+      value: 
+      objectReference: {fileID: 5977105769854858638}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
