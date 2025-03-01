@@ -28,6 +28,10 @@ public class AudioManager : MonoBehaviour
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
 
+    private EventInstance footstepsEventInstance;
+
+    public float currentFootstepState = 0;
+
     private void Awake()
     {
         if(instance != null)
@@ -83,7 +87,6 @@ public class AudioManager : MonoBehaviour
     {
         ambienceEventInstance.setParameterByName("Submerged", (float)submerged);
     }
-
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);

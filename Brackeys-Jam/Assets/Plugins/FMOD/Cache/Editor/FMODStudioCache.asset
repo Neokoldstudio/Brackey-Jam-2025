@@ -20,6 +20,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 11245440
   Exists: 1
+--- !u!114 &-7532508535260291207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlayerFootstepsDry
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlayerFootstepsDry
+  Guid:
+    Data1: -454744193
+    Data2: 1236996075
+    Data3: -1032699741
+    Data4: 1715105108
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6593841711061814127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +163,11 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< HEAD
   lastModified: 638764317100852734
+=======
+  lastModified: 638764440602943266
+>>>>>>> c141d98931860aa860faf1599aad2925205f079f
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -210,10 +241,14 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< HEAD
   lastModified: 638764317100867792
+=======
+  lastModified: 638764440602963280
+>>>>>>> c141d98931860aa860faf1599aad2925205f079f
   FileSizes:
   - Name: Desktop
-    Value: 1524
+    Value: 1572
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -234,22 +269,33 @@ MonoBehaviour:
   - {fileID: -5792756593222048959}
   - {fileID: -7609172751758721395}
   EditorEvents:
-  - {fileID: 8464987200674586673}
   - {fileID: 5971838888363830994}
   - {fileID: -5431983291483691335}
   - {fileID: 1811523339166996928}
   - {fileID: -6593841711061814127}
   - {fileID: 6034930379244790401}
   - {fileID: -5244355449142486745}
+<<<<<<< HEAD
   - {fileID: 9100372784315607372}
   - {fileID: -5460500396199461365}
   - {fileID: 4782673740316427838}
+=======
+  - {fileID: -3478860439824646038}
+  - {fileID: 1588353819252599166}
+  - {fileID: 216717284487990304}
+  - {fileID: -7532508535260291207}
+  - {fileID: 1201716889593197074}
+>>>>>>> c141d98931860aa860faf1599aad2925205f079f
   EditorParameters: []
   MasterBanks:
   - {fileID: -5342852862996881151}
   StringsBanks:
   - {fileID: -2130328015297926904}
+<<<<<<< HEAD
   cacheTime: 638764317101438888
+=======
+  cacheTime: 638764440603566165
+>>>>>>> c141d98931860aa860faf1599aad2925205f079f
   cacheVersion: 131609
 --- !u!114 &216717284487990304
 MonoBehaviour:
@@ -304,6 +350,33 @@ MonoBehaviour:
   - NotSubmerged
   - IsSubmerged
   Exists: 1
+--- !u!114 &1201716889593197074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlayerFootstepsWet
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlayerFootstepsWet
+  Guid:
+    Data1: -1240093960
+    Data2: 1081147783
+    Data3: -802260833
+    Data4: -720896334
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1404675983385182642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,10 +392,14 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
+<<<<<<< HEAD
   lastModified: 638764317101438888
+=======
+  lastModified: 638764440603566165
+>>>>>>> c141d98931860aa860faf1599aad2925205f079f
   FileSizes:
   - Name: Desktop
-    Value: 293312
+    Value: 294496
   Exists: 1
 --- !u!114 &1588353819252599166
 MonoBehaviour:
@@ -460,6 +537,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+<<<<<<< HEAD
 --- !u!114 &8464987200674586673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,3 +592,5 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 587294
+=======
+>>>>>>> c141d98931860aa860faf1599aad2925205f079f
