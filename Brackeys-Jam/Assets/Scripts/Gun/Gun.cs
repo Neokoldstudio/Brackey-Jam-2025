@@ -94,6 +94,7 @@ public class Gun : MonoBehaviour
         }
 
         CinemachineShake.Instance.Shake(0.05f, 0.1f);
+
         //play glue gun shot sound
         AudioManager.instance.PlayOneShot(FMODEvents.instance.glueGunShot, this.transform.position);
 

@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         InitiliazeAmbience(FMODEvents.instance.submarineAmbience);
-        InitiliazeMusic(FMODEvents.instance.mainThemeOST);
+        InitiliazeMusic(FMODEvents.instance.inGameThemeOST);
     }
 
     private void Update()

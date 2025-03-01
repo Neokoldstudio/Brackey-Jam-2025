@@ -45,6 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04aae8d3ce699d54a9a12bfff1ca4ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolume: 1
+  musicVolume: 1
+  ambienceVolume: 1
+  sfxVolume: 1
 --- !u!1 &7478235468262122179
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +100,14 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
-  <underwaterAmbience>k__BackingField:
+  <mainThemeOST>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <inGameThemeOST>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
@@ -104,6 +115,34 @@ MonoBehaviour:
       Data4: 0
     Path: 
   <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerJump>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerJumpLand>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerDolphinJump>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <playerJumpInWater>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
@@ -123,4 +162,4 @@ MonoBehaviour:
       Data2: 1235352319
       Data3: 1825426833
       Data4: 2051067850
-    Path: event:/Gun/GlueGunShot
+    Path: event:/SFX/Gun/GlueGunShot

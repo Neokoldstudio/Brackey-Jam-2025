@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638758276880969226
+  lastModified: 638764344282980524
   FileSizes:
   - Name: Desktop
-    Value: 631552
+    Value: 11245440
   Exists: 1
 --- !u!114 &-6593841711061814127
 MonoBehaviour:
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank
   Name: Main Level
   StudioPath: bank:/Main Level
-  lastModified: 638758276880919102
+  lastModified: 638757800996634104
   FileSizes:
   - Name: Desktop
     Value: 513120
@@ -109,7 +109,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638758276880924147
+  lastModified: 638764344281769194
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -140,7 +140,34 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 48000
+  Length: 225882
+--- !u!114 &-3478860439824646038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Ingame Theme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Ingame Theme
+  Guid:
+    Data1: 886651826
+    Data2: 1148709826
+    Data3: -1696045679
+    Data4: -2113819979
+  Banks:
+  - {fileID: -7609172751758721395}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 587294
 --- !u!114 &-2130328015297926904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,38 +183,11 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638758276880924147
+  lastModified: 638764344281794700
   FileSizes:
   - Name: Desktop
-    Value: 1468
+    Value: 1524
   Exists: 1
---- !u!114 &-1085482612364174352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Gun/GlueGunShot
-  m_EditorClassIdentifier: 
-  Path: event:/Gun/GlueGunShot
-  Guid:
-    Data1: -944841927
-    Data2: 1235352319
-    Data3: 1825426833
-    Data4: 2051067850
-  Banks:
-  - {fileID: 1404675983385182642}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,8 +207,6 @@ MonoBehaviour:
   - {fileID: -5792756593222048959}
   - {fileID: -7609172751758721395}
   EditorEvents:
-  - {fileID: 1913629710744829769}
-  - {fileID: -1085482612364174352}
   - {fileID: 8464987200674586673}
   - {fileID: 5971838888363830994}
   - {fileID: -5431983291483691335}
@@ -216,13 +214,43 @@ MonoBehaviour:
   - {fileID: -6593841711061814127}
   - {fileID: 6034930379244790401}
   - {fileID: -5244355449142486745}
+  - {fileID: -3478860439824646038}
+  - {fileID: 1588353819252599166}
+  - {fileID: 216717284487990304}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5342852862996881151}
   StringsBanks:
   - {fileID: -2130328015297926904}
-  cacheTime: 638758276880979281
+  cacheTime: 638764354183533837
   cacheVersion: 131609
+--- !u!114 &216717284487990304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun/GlueGunShot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun/GlueGunShot
+  Guid:
+    Data1: -944841927
+    Data2: 1235352319
+    Data3: 1825426833
+    Data4: 2051067850
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &512757992024267402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,11 +292,38 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638758276880979281
+  lastModified: 638764354183533837
   FileSizes:
   - Name: Desktop
-    Value: 292896
+    Value: 293312
   Exists: 1
+--- !u!114 &1588353819252599166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun/NailGunShot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun/NailGunShot
+  Guid:
+    Data1: -1338287583
+    Data2: 1296491635
+    Data3: 1154273191
+    Data4: 320626078
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1811523339166996928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,33 +342,6 @@ MonoBehaviour:
     Data2: 1087653736
     Data3: -1374569847
     Data4: -1673259591
-  Banks:
-  - {fileID: 1404675983385182642}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1913629710744829769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Gun/NailGunShot
-  m_EditorClassIdentifier: 
-  Path: event:/Gun/NailGunShot
-  Guid:
-    Data1: -1338287583
-    Data2: 1296491635
-    Data3: 1154273191
-    Data4: 320626078
   Banks:
   - {fileID: 1404675983385182642}
   IsStream: 0

@@ -5,7 +5,7 @@
 			<value>GlueGunShot</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{5720d539-86d0-4549-8912-640df3bc1253}</destination>
@@ -56,7 +56,7 @@
 			<destination>{c50aa24f-2d79-4a6b-8bd8-47efde6fdf57}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{09cdd915-faac-45c2-8053-3cd9e7cf8f88}</destination>
+			<destination>{b05c6aac-f13b-49a1-a3c1-40807fb236eb}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{5ae7234b-ab50-4656-a66b-76b458ed31c8}" />
@@ -107,6 +107,7 @@
 	<object class="MixerBusEffectChain" id="{63b0274d-4d93-43eb-9aa3-7ea05b6d8ccf}">
 		<relationship name="effects">
 			<destination>{511b8003-bb57-4e74-9221-e99e7f4b0472}</destination>
+			<destination>{ab99a3b0-7731-4468-aa95-4553e9769ca9}</destination>
 			<destination>{898be4ac-0be3-4f4e-87c1-0753a2c49f83}</destination>
 		</relationship>
 	</object>
@@ -118,6 +119,7 @@
 	</object>
 	<object class="MixerBusFader" id="{d435a3b8-0339-40ec-9ee5-5f04ca570d58}" />
 	<object class="MixerBusFader" id="{511b8003-bb57-4e74-9221-e99e7f4b0472}" />
+	<object class="SpatialiserEffect" id="{ab99a3b0-7731-4468-aa95-4553e9769ca9}" />
 	<object class="LimiterEffect" id="{898be4ac-0be3-4f4e-87c1-0753a2c49f83}">
 		<property name="boost">
 			<value>4.30000019</value>

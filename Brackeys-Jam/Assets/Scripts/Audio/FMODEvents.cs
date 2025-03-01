@@ -9,6 +9,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference submarineAmbience {  get; private set; }
     [field: Header("Music")]
     [field: SerializeField] public EventReference mainThemeOST { get; private set; }
+    [field: SerializeField] public EventReference inGameThemeOST { get; private set; }  
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference playerFootsteps { get; private set; }
     [field: SerializeField] public EventReference playerJump { get; private set; }

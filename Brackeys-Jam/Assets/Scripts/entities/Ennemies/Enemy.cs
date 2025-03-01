@@ -52,6 +52,8 @@ public class Enemy : Entity
     {
         StartCoroutine(Flash());
         base.GetHit(damage);
+
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.glueGunShot, this.transform.position);
     }
 
     private void Wander()

@@ -2282,6 +2282,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 3877911553970092746, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
+        type: 3}
+      propertyPath: <glueGunShot>k__BackingField.Path
+      value: event:/SFX/Gun/GlueGunShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877911553970092746, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
+        type: 3}
+      propertyPath: <nailGunShot>k__BackingField.Path
+      value: event:/SFX/Gun/NailGunShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877911553970092746, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
+        type: 3}
+      propertyPath: <inGameThemeOST>k__BackingField.Path
+      value: event:/Music/Ingame Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877911553970092746, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
+        type: 3}
+      propertyPath: <inGameThemeOST>k__BackingField.Guid.Data1
+      value: 886651826
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877911553970092746, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
+        type: 3}
+      propertyPath: <inGameThemeOST>k__BackingField.Guid.Data2
+      value: 1148709826
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877911553970092746, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
+        type: 3}
+      propertyPath: <inGameThemeOST>k__BackingField.Guid.Data3
+      value: -1696045679
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877911553970092746, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
+        type: 3}
+      propertyPath: <inGameThemeOST>k__BackingField.Guid.Data4
+      value: -2113819979
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962418697077065512, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
+        type: 3}
+      propertyPath: musicVolume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962418697077065512, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
+        type: 3}
+      propertyPath: ambienceVolume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8310468365269151100, guid: 3b42f9ceda9700b4e8e55169e3e25f9d,
         type: 3}
       propertyPath: m_LocalScale.x
