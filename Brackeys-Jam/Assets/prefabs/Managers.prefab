@@ -1381,7 +1381,7 @@ PrefabInstance:
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
       propertyPath: <playerJump>k__BackingField.Path
-      value: event:/SFX/Jump
+      value: event:/SFX/Player/Jumps/Jump
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
@@ -1401,7 +1401,7 @@ PrefabInstance:
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
       propertyPath: <playerJumpLand>k__BackingField.Path
-      value: event:/SFX/PlayerJumpLand
+      value: event:/SFX/Player/Jumps/PlayerJumpLand
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
@@ -1451,12 +1451,12 @@ PrefabInstance:
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
       propertyPath: <playerDolphinJump>k__BackingField.Path
-      value: event:/SFX/DolphinJump
+      value: event:/SFX/Player/Jumps/DolphinJump
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
       propertyPath: <playerJumpInWater>k__BackingField.Path
-      value: event:/SFX/JumpInWater
+      value: event:/SFX/Player/Jumps/JumpInWater
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}

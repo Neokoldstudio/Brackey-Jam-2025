@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{747fef9e-063e-4fa2-be65-075b3fb6a469}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{9f7af0db-2a5d-40bd-b0bd-75b78d319aa1}</destination>
 		</relationship>
@@ -122,7 +125,7 @@
 	<object class="SpatialiserEffect" id="{ab99a3b0-7731-4468-aa95-4553e9769ca9}" />
 	<object class="LimiterEffect" id="{898be4ac-0be3-4f4e-87c1-0753a2c49f83}">
 		<property name="boost">
-			<value>4.30000019</value>
+			<value>1.89999998</value>
 		</property>
 	</object>
 </objects>

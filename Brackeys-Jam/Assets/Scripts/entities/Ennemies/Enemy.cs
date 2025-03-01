@@ -53,7 +53,7 @@ public class Enemy : Entity
         StartCoroutine(Flash());
         base.GetHit(damage);
 
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.glueGunShot, this.transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyHit, this.transform.position);
     }
 
     private void Wander()
@@ -108,6 +108,8 @@ public class Enemy : Entity
                 ScoreManager.Instance.RegisterAction("Airborne Kill");
         }
         else ScoreManager.Instance.RegisterAction("Kill");
+
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
 
         WaterSystem.Instance.DrainWater(10f);
         base.Die();

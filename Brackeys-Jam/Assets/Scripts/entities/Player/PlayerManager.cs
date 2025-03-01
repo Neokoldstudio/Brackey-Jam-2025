@@ -29,6 +29,8 @@ public class PlayerManager : Entity
         screenFlash.Flash();
         healthBar.UpdateBar(currentHealth);
         CinemachineShake.Instance.Shake(0.5f, 0.2f);
+
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, this.transform.position);
     }
 
     protected override void Die()

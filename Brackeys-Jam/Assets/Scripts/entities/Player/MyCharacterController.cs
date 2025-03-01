@@ -577,7 +577,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                     CinemachineShake.Instance.Shake(0.1f, 0.06f);
                     glue.StartBounceAnimation();
 
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDolphinJump, this.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerJumpOnGoo, this.transform.position);
                 }
                 return;
             }

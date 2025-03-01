@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ede46668-1f24-4b4d-9aca-c92a4c21d224}">
 		<property name="assetPath">
-			<value>SFX/Dolphin Jump 2.ogg</value>
+			<value>SFX/Player/Dolphin Jump 2.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

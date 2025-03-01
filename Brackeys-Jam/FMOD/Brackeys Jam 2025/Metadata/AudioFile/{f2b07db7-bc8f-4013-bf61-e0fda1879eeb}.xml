@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f2b07db7-bc8f-4013-bf61-e0fda1879eeb}">
+		<property name="assetPath">
+			<value>SFX/Enemy/Enemy VC 2.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{634bf435-c659-4798-b109-ab10822d016c}</destination>
+		</relationship>
+	</object>
+</objects>

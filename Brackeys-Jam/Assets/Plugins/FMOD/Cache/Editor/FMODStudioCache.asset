@@ -1,5 +1,113 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8398752344598511030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Jumps/PlayerJumpOnGlue
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Jumps/PlayerJumpOnGlue
+  Guid:
+    Data1: -1855988406
+    Data2: 1234633375
+    Data3: -1486059357
+    Data4: 1666433056
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8252997826245062290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy/Enemy Hit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy/Enemy Hit
+  Guid:
+    Data1: -1727069894
+    Data2: 1114856161
+    Data3: -1512494662
+    Data4: 1703166321
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 80
+  Length: 0
+--- !u!114 &-8075117516381480592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/PlayerFootstepsWet
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/PlayerFootstepsWet
+  Guid:
+    Data1: -1240093960
+    Data2: 1081147783
+    Data3: -802260833
+    Data4: -720896334
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7875185694394945825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Jumps/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Jumps/Jump
+  Guid:
+    Data1: -1006031816
+    Data2: 1087653736
+    Data3: -1374569847
+    Data4: -1673259591
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7609172751758721395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20,60 +128,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 11245440
   Exists: 1
---- !u!114 &-7532508535260291207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PlayerFootstepsDry
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/PlayerFootstepsDry
-  Guid:
-    Data1: -454744193
-    Data2: 1236996075
-    Data3: -1032699741
-    Data4: 1715105108
-  Banks:
-  - {fileID: 1404675983385182642}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6593841711061814127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/JumpInWater
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/JumpInWater
-  Guid:
-    Data1: -10741141
-    Data2: 1186636320
-    Data3: 1050403464
-    Data4: -563113167
-  Banks:
-  - {fileID: 1404675983385182642}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-5792756593222048959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,33 +148,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 513120
   Exists: 1
---- !u!114 &-5431983291483691335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/DolphinJump
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/DolphinJump
-  Guid:
-    Data1: -1209216236
-    Data2: 1317606596
-    Data3: -848397689
-    Data4: -666973762
-  Banks:
-  - {fileID: 1404675983385182642}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-5342852862996881151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +163,7 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638764440602943266
+  lastModified: 638764526897704221
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -195,6 +222,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 587294
+--- !u!114 &-2544929098289193391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/PlayerHit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/PlayerHit
+  Guid:
+    Data1: 1087034815
+    Data2: 1298997895
+    Data3: 1032725418
+    Data4: 556245978
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2130328015297926904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,11 +264,38 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638764440602963280
+  lastModified: 638764526897714240
   FileSizes:
   - Name: Desktop
-    Value: 1572
+    Value: 1918
   Exists: 1
+--- !u!114 &-453122516612988332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy/Enemy VC
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy/Enemy VC
+  Guid:
+    Data1: 2059874743
+    Data2: 1114674989
+    Data3: 320470686
+    Data4: 855086044
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,23 +316,57 @@ MonoBehaviour:
   - {fileID: -7609172751758721395}
   EditorEvents:
   - {fileID: 5971838888363830994}
-  - {fileID: -5431983291483691335}
-  - {fileID: 1811523339166996928}
-  - {fileID: -6593841711061814127}
-  - {fileID: 6034930379244790401}
   - {fileID: -5244355449142486745}
   - {fileID: -3478860439824646038}
   - {fileID: 1588353819252599166}
   - {fileID: 216717284487990304}
-  - {fileID: -7532508535260291207}
-  - {fileID: 1201716889593197074}
+  - {fileID: 65171072209461528}
+  - {fileID: -8252997826245062290}
+  - {fileID: 4346000124106717255}
+  - {fileID: -453122516612988332}
+  - {fileID: 4954147121744835075}
+  - {fileID: 8202195393125896572}
+  - {fileID: 2608852011992527654}
+  - {fileID: -7875185694394945825}
+  - {fileID: -8398752344598511030}
+  - {fileID: 6737580809428028720}
+  - {fileID: 5618195197385990735}
+  - {fileID: -2544929098289193391}
+  - {fileID: -8075117516381480592}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5342852862996881151}
   StringsBanks:
   - {fileID: -2130328015297926904}
-  cacheTime: 638764440603566165
+  cacheTime: 638764529344531423
   cacheVersion: 131609
+--- !u!114 &65171072209461528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun/GlueGunHit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun/GlueGunHit
+  Guid:
+    Data1: -1104414964
+    Data2: 1129406220
+    Data3: 1031491507
+    Data4: -1505960991
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 80
+  Length: 0
 --- !u!114 &216717284487990304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,33 +420,6 @@ MonoBehaviour:
   - NotSubmerged
   - IsSubmerged
   Exists: 1
---- !u!114 &1201716889593197074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PlayerFootstepsWet
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/PlayerFootstepsWet
-  Guid:
-    Data1: -1240093960
-    Data2: 1081147783
-    Data3: -802260833
-    Data4: -720896334
-  Banks:
-  - {fileID: 1404675983385182642}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &1404675983385182642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,10 +435,10 @@ MonoBehaviour:
   Path: FMOD/Brackeys Jam 2025/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638764440603566165
+  lastModified: 638764529344531423
   FileSizes:
   - Name: Desktop
-    Value: 294496
+    Value: 540544
   Exists: 1
 --- !u!114 &1588353819252599166
 MonoBehaviour:
@@ -379,7 +467,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &1811523339166996928
+--- !u!114 &2608852011992527654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -389,14 +477,95 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Jump
+  m_Name: event:/SFX/Player/Jumps/PlayerJumpLand
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Jump
+  Path: event:/SFX/Player/Jumps/PlayerJumpLand
   Guid:
-    Data1: -1006031816
-    Data2: 1087653736
-    Data3: -1374569847
-    Data4: -1673259591
+    Data1: 2013516057
+    Data2: 1199686729
+    Data3: -814588797
+    Data4: -462154579
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4346000124106717255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy/Enemy Death
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy/Enemy Death
+  Guid:
+    Data1: 1228301168
+    Data2: 1171128439
+    Data3: -618836295
+    Data4: 935594307
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 80
+  Length: 0
+--- !u!114 &4954147121744835075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun/GlueJump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun/GlueJump
+  Guid:
+    Data1: 1807212958
+    Data2: 1141025099
+    Data3: 2062007171
+    Data4: -1673744374
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5618195197385990735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/PlayerFootstepsDry
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/PlayerFootstepsDry
+  Guid:
+    Data1: -454744193
+    Data2: 1236996075
+    Data3: -1032699741
+    Data4: 1715105108
   Banks:
   - {fileID: 1404675983385182642}
   IsStream: 0
@@ -434,7 +603,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6034930379244790401
+--- !u!114 &6737580809428028720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -444,14 +613,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PlayerJumpLand
+  m_Name: event:/SFX/Player/Jumps/JumpInWater
   m_EditorClassIdentifier: 
-  Path: event:/SFX/PlayerJumpLand
+  Path: event:/SFX/Player/Jumps/JumpInWater
   Guid:
-    Data1: 2013516057
-    Data2: 1199686729
-    Data3: -814588797
-    Data4: -462154579
+    Data1: -10741141
+    Data2: 1186636320
+    Data3: 1050403464
+    Data4: -563113167
+  Banks:
+  - {fileID: 1404675983385182642}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8202195393125896572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Jumps/DolphinJump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Jumps/DolphinJump
+  Guid:
+    Data1: -1209216236
+    Data2: 1317606596
+    Data3: -848397689
+    Data4: -666973762
   Banks:
   - {fileID: 1404675983385182642}
   IsStream: 0

@@ -60,7 +60,7 @@ public class glueBullet : MonoBehaviour
                     _glueState = GlueState.Glued;
                     StartBounceAnimation();
                     _TrailRenderer.enabled = false;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.glueGunShot, this.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.glueGunHit, this.transform.position);
                 }
                 if (collision.gameObject.CompareTag("bullet"))
                 {
