@@ -39,7 +39,8 @@ public class ScoreManager : MonoBehaviour
         {"Hole Plucked With Enemy !!", (400, 2.0f)},
         {"Bullet Defflected", (20, 0.1f)},
         {"Ennemy Glued !", (10,0.1f)},
-        {"Airborne Plucking!", (300, 1.5f)}
+        {"Airborne Plucking!", (300, 1.5f)},
+        {"Hurt", (-200, -5.0f)}
     };
 
     private Dictionary<string, float> currentActionValues;
@@ -98,7 +99,7 @@ public class ScoreManager : MonoBehaviour
         {
             var (basePoints, Multiplier) = (currentActionValues[action], actionValues[action].bonusMultiplier);
 
-            if (action == previousAction)
+            if (action == previousAction && action!="Hurt")
             {
                 currentActionValues[action] *= 0.5f;
             }
@@ -111,9 +112,12 @@ public class ScoreManager : MonoBehaviour
 
             previousAction = action;
 
-            score += basePoints * styleMultiplier;
-            
             styleMultiplier = Mathf.Clamp(styleMultiplier, minMultiplier, maxMultiplier);
+
+            score += basePoints * styleMultiplier;
+
+            if (score <= 0) score = 0;
+
             lastActionTime = Time.time;
             Debug.Log(basePoints);
             recentActions.Add(action);

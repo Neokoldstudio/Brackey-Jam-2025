@@ -113,19 +113,19 @@ public class GameManager : MonoBehaviour
 
     public void LoseLevel()
     {
-        EndLevel();
+        EndLevel(3);
         // Implement level transition logic here
     }
 
     public void WinLevel()
     {
-        EndLevel();
+        EndLevel(2);
         // Implement level transition logic here
     }
 
-    private void EndLevel()
+    private void EndLevel(int scene)
     {
         ScoreManager.Instance.FreezeScore();
-        SceneManager.LoadScene(SceneManager.loadedSceneCount+1);
+        LevelLoader.Instance.LoadLevel(scene);
     }
 }

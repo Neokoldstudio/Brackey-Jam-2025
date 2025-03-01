@@ -29,6 +29,8 @@ public class PlayerManager : Entity
         screenFlash.Flash();
         healthBar.UpdateBar(currentHealth);
         CinemachineShake.Instance.Shake(0.5f, 0.2f);
+        ScoreManager.Instance.RegisterAction("Hurt");
+        UIManager.Instance.SetMultiplierText();
     }
 
     protected override void Die()
