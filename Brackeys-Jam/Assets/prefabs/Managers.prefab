@@ -1386,12 +1386,12 @@ PrefabInstance:
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
       propertyPath: <glueGunShot>k__BackingField.Path
-      value: event:/Gun/GlueGunShot
+      value: event:/SFX/Gun/GlueGunShot
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
       propertyPath: <nailGunShot>k__BackingField.Path
-      value: event:/Gun/NailGunShot
+      value: event:/SFX/Gun/NailGunShot
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
@@ -1406,7 +1406,7 @@ PrefabInstance:
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
       propertyPath: <playerFootsteps>k__BackingField.Path
-      value: event:/SFX/PlayerFootsteps
+      value: event:/SFX/PlayerFootstepsDry
       objectReference: {fileID: 0}
     - target: {fileID: 2460213265869482963, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}

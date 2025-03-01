@@ -4,6 +4,7 @@ using UnityEngine;
 using KinematicCharacterController;
 using System;
 using FMOD.Studio;
+using Unity.VisualScripting;
 
 namespace KinematicCharacterController.Walkthrough.SwimmingState
 {
@@ -93,7 +94,9 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
         //audio
         private float timer = 0.0f;
         private float footstepSpeed = 0.35f;
-        private bool _wasAirborne = false;    
+        private bool _wasAirborne = false;
+
+        private FootstepChangeTrigger footstepChangeTrigger;
 
         private void Start()
         {
@@ -102,6 +105,8 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
 
             // Handle initial state
             TransitionToState(CharacterState.Default);
+
+            footstepChangeTrigger = GetComponent<FootstepChangeTrigger>();
         }
 
         private void FixedUpdate()
@@ -571,6 +576,8 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                     else ScoreManager.Instance.RegisterAction("Bullet Bounce");
                     CinemachineShake.Instance.Shake(0.1f, 0.06f);
                     glue.StartBounceAnimation();
+
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDolphinJump, this.transform.position);
                 }
                 return;
             }
@@ -605,13 +612,24 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
             //start footsteps event if the player has an x velocity and is on the ground
             if (Motor.GroundingStatus.IsStableOnGround && Motor.Velocity.x != 0)
             {
-
-                if (timer >= footstepSpeed)
+                if(footstepChangeTrigger.GetState() == 0)
                 {
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootsteps, this.transform.position);
-                    timer = 0.0f;
+                    if (timer >= footstepSpeed)
+                    {
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootstepsDry, this.transform.position);
+                        timer = 0.0f;
+                        Debug.Log("State: " + footstepChangeTrigger.GetState());
+                    }
                 }
-
+                else if(footstepChangeTrigger.GetState() == 1)
+                {
+                    if (timer >= footstepSpeed)
+                    {
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootstepsWet, this.transform.position);
+                        timer = 0.0f;
+                    }
+                }
+                               
                 timer += Time.deltaTime;
             }
         }
