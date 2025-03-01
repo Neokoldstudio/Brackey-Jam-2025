@@ -24,6 +24,6 @@ public class RankDisplayScene : MonoBehaviour
     {
         leaderboard.AddEntry(pseudoInput.text, Mathf.RoundToInt(ScoreManager.Instance.GetScore()));
         ScoreManager.Instance.Reset();
-        SceneManager.LoadScene(scene);
+        LevelLoader.Instance.LoadLevel(scene);
     }
 }

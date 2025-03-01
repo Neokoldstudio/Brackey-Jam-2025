@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class Gun : MonoBehaviour
     public Transform attackPoint;
     public GameObject rayMuzzleFlashPrefab;
     public GameObject glueMuzzleFlashPrefab;
+    public GameObject trailPrefab;
+    public Transform muzzlePos;
 
     private bool shooting, readyToShoot = true;
 
@@ -107,23 +110,26 @@ public class Gun : MonoBehaviour
         hitscanBulletsLeft--;
 
         Vector3 direction = fpsCam.transform.forward;
+        Vector3 hitPoint = fpsCam.transform.position + (direction * hitscanRange);
 
         if (Physics.Raycast(fpsCam.transform.position, direction, out RaycastHit hit, hitscanRange))
         {
-            Debug.Log("shot smth");
+            hitPoint = hit.point;
             if (hit.collider.gameObject.TryGetComponent(out Entity entity))
             {
                 entity.GetHit(hitscanDamage);
             }
         }
 
+        StartCoroutine(SpawnTrail(muzzlePos.position, hitPoint));
+
         if (rayMuzzleFlashPrefab)
         {
-            Instantiate(rayMuzzleFlashPrefab, attackPoint.position, Quaternion.identity);
+            Instantiate(rayMuzzleFlashPrefab, muzzlePos.position, Quaternion.identity);
         }
 
-        //play nail gun shot sound
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.nailGunShot, this.transform.position);
+        // Play nail gun shot sound
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.nailGunShot, transform.position);
         CinemachineShake.Instance.Shake(0.1f, 0.2f);
         Invoke(nameof(ResetHitscanShot), hitscanTimeBetweenShots);
 
@@ -131,6 +137,24 @@ public class Gun : MonoBehaviour
         {
             ReloadHitscan();
         }
+    }
+
+    private IEnumerator SpawnTrail(Vector3 start, Vector3 end)
+    {
+        GameObject trailInstance = Instantiate(trailPrefab, start, Quaternion.identity);
+        TrailRenderer trail = trailInstance.GetComponent<TrailRenderer>();
+        float time = 0;
+        float duration = 0.1f;
+
+        while (time < duration)
+        {
+            trailInstance.transform.position = Vector3.Lerp(start, end, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        trailInstance.transform.position = end;
+        Destroy(trailInstance, trail.time);
     }
 
     private void ResetShot()

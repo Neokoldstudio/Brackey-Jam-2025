@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
     {
         float currentScore = ScoreManager.Instance.GetScore();
         displayScore = Mathf.Lerp(displayScore, currentScore, Time.deltaTime * 5);
-        displayMultiplier = Mathf.Lerp(displayMultiplier, ScoreManager.Instance.GetMultiplier(), Time.deltaTime * 5);
+        displayMultiplier = Mathf.Lerp(displayMultiplier, ScoreManager.Instance.GetMultiplier(), Time.deltaTime * 10);
 
         scoreText.text = Mathf.RoundToInt(displayScore).ToString();
         multiplierText.text = displayMultiplier>1.01 ? "x" + displayMultiplier.ToString("0.00") : "";
@@ -88,6 +88,13 @@ public class UIManager : MonoBehaviour
 
         Coroutine fadeCoroutine = StartCoroutine(RemoveActionAfterTime(action, actionFadeTime));
         actionCoroutines[action] = fadeCoroutine;
+    }
+
+    public void SetMultiplierText()
+    {
+        displayMultiplier = ScoreManager.Instance.GetMultiplier();
+        Debug.Log(displayMultiplier);
+        multiplierText.text = displayMultiplier > 1.01 ? "x" + displayMultiplier.ToString("0.00") : "";
     }
 
     private IEnumerator RemoveActionAfterTime(string action, float delay)

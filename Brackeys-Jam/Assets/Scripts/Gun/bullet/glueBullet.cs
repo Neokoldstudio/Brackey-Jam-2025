@@ -2,7 +2,6 @@ using KinematicCharacterController;
 using KinematicCharacterController.Walkthrough.SwimmingState;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UI;
 using UnityEngine;
 using static glueBullet;
 
