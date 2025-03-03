@@ -388,7 +388,7 @@ MonoBehaviour:
   hitscanDamage: 50
   hitscanRange: 100
   hitscanSpread: 0.05
-  hitscanReloadTime: 1.2
+  hitscanReloadTime: 0
   hitscanTimeBetweenShots: 0.2
   hitscanMagazineSize: 15
   playerRb: {fileID: 0}
@@ -4690,7 +4690,7 @@ MonoBehaviour:
   SwimmingSpeed: 10
   SwimmingMovementSharpness: 10
   SwimmingOrientationSharpness: 10
-  ImpulseMultiplier: 3
+  ImpulseMultiplier: 3.5
   HorizontalVelocityThreshold: 0.2
   IgnoredColliders: []
   OrientTowardsGravity: 0

@@ -10,7 +10,7 @@ public class Gun : MonoBehaviour
 
     [Header("Gun Stats")]
     public float timeBetweenShooting = 0.1f;
-    public float spread = 0.1f;
+    public float spread = 0.0f;
     public float timeBetweenShots = 0.1f;
     public int bulletsPerTap = 1;
     public bool allowButtonHold = false;
@@ -125,7 +125,9 @@ public class Gun : MonoBehaviour
 
         if (rayMuzzleFlashPrefab)
         {
-            Instantiate(rayMuzzleFlashPrefab, muzzlePos.position, Quaternion.identity);
+            GameObject muzzleFlash = Instantiate(rayMuzzleFlashPrefab, muzzlePos.position, Quaternion.identity);
+            muzzleFlash.transform.parent = muzzlePos;
+            muzzleFlash.transform.localRotation = muzzlePos.localRotation;
         }
 
         // Play nail gun shot sound
@@ -144,7 +146,7 @@ public class Gun : MonoBehaviour
         GameObject trailInstance = Instantiate(trailPrefab, start, Quaternion.identity);
         TrailRenderer trail = trailInstance.GetComponent<TrailRenderer>();
         float time = 0;
-        float duration = 0.1f;
+        float duration = 0.06f;
 
         while (time < duration)
         {

@@ -192,23 +192,6 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                             _timeSinceJumpRequested = 0f;
                             _jumpRequested = true;
                         }
-
-                        // Crouching input
-                        if (inputs.CrouchDown)
-                        {
-                            _shouldBeCrouching = true;
-
-                            if (!_isCrouching)
-                            {
-                                _isCrouching = true;
-                                Motor.SetCapsuleDimensions(0.5f, 1f, 0.5f);
-                                MeshRoot.localScale = new Vector3(1f, 0.5f, 1f);
-                            }
-                        }
-                        else if (inputs.CrouchUp)
-                        {
-                            _shouldBeCrouching = false;
-                        }
                         break;
                     }
                 case CharacterState.Swimming:
@@ -401,7 +384,6 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                             currentVelocity += _internalVelocityAdd;
                             _internalVelocityAdd = Vector3.zero;
                         }
-
                         //Check if player was airborne and play landing sound if so
                         if (_wasAirborne && Motor.GroundingStatus.IsStableOnGround)
                         {
@@ -570,6 +552,10 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                     Vector3 direction = Motor.Velocity.normalized;
                     Motor.ForceUnground(0.1f); // Disable ground snapping for a brief instant
                     AddVelocity(glue.Bounce(direction, hitCollider.transform.up) * (Motor.Velocity.magnitude / MaxAirMoveSpeed));
+
+                    _jumpedThisFrame = true;
+                    _jumpConsumed = true;
+                    _doubleJumpConsumed = false;
 
                     float dot = Vector3.Dot(hitCollider.transform.up, Vector3.up);
                     if(dot < 0.2f) ScoreManager.Instance.RegisterAction("Wall Bounce");

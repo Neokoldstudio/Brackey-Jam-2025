@@ -29,13 +29,11 @@ public class PlayerManager : Entity
         screenFlash.Flash();
         healthBar.UpdateBar(currentHealth);
         CinemachineShake.Instance.Shake(0.5f, 0.2f);
-<<<<<<< HEAD
 
         AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, this.transform.position);
-=======
         ScoreManager.Instance.RegisterAction("Hurt");
         UIManager.Instance.SetMultiplierText();
->>>>>>> 13d812d9a9074c6b36c3b130b16e84510b4ef797
+
     }
 
     protected override void Die()

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9048607792381979512}
   - component: {fileID: 8414517599154589335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.05
+  m_Time: 0.02
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3

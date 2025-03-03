@@ -2124,7 +2124,7 @@ PrefabInstance:
     - target: {fileID: 6992749191990871783, guid: 10aa95dff35485d49b1e79ad9313bb68,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8108364459450011748, guid: 10aa95dff35485d49b1e79ad9313bb68,
         type: 3}
@@ -3795,10 +3795,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1422847598859009302, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: m_Name
+      value: muzzlePos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908149802951830419, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: rayMuzzleFlashPrefab
+      value: 
+      objectReference: {fileID: 2163100902864181023, guid: fcf14aa15cc2ae641b709d5e587321d3,
+        type: 3}
     - target: {fileID: 3156125957305551982, guid: 814950623a258c342b8046ed46c53276,
         type: 3}
       propertyPath: m_Name
       value: MainCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278223556974762748, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: AllowWallJump
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278223556974762748, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: AllowDoubleJump
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5530418996846184076, guid: 814950623a258c342b8046ed46c53276,
         type: 3}

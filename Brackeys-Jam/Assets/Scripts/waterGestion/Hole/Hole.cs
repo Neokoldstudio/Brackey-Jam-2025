@@ -25,7 +25,7 @@ public class Hole : MonoBehaviour
             ScoreManager.Instance.RegisterAction("Airborne Plucking!");
 
         }
-        ScoreManager.Instance.RegisterAction("Hole Plucked");
+        else ScoreManager.Instance.RegisterAction("Hole Plucked");
     }
 
     public void SetHoleSpawner(HoleSpawner holeSpawner)
