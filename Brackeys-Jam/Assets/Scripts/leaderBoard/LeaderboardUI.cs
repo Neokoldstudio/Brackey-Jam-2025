@@ -49,7 +49,7 @@ public class LeaderboardUI : MonoBehaviour
             texts[0].text = "#" + entry.rank;
             texts[1].text = entry.pseudo;
             texts[2].text = entry.score.ToString();
-            texts[3].text = entry.scoreRank;
+            texts[3].text = entry.GetScoreRank(entry.score);
         }
     }
 }

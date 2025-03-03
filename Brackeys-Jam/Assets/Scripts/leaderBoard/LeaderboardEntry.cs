@@ -17,14 +17,15 @@ public class LeaderboardEntry
         this.scoreRank = GetScoreRank(score);
     }
 
-    private string GetScoreRank(int score)
+    public string GetScoreRank(int score)
     {
         //500, 1500, 3000, 6000, 10000
-        if (score >= 10000) return "SS";
-        if (score >= 6000) return "S";
-        if (score >= 3000) return "A";
-        if (score >= 1500) return "B";
-        if (score >=500) return "C";
-        return "D";
+        if (score >= 15000) return "SS";
+        if (score >= 10000) return "S";
+        if (score >= 6000) return "A";
+        if (score >= 3000) return "B";
+        if (score >= 1500) return "C";
+        if (score >=500) return "D";
+        return "Unranked";
     }
 }
