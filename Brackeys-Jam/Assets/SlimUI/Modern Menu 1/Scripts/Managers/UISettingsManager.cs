@@ -84,7 +84,7 @@ namespace SlimUI.ModernMenu{
 
 			// check hud value
 			if(PlayerPrefs.GetInt("ShowHUD")==0){
-				showhudtext.GetComponent<TMP_Text>().text = "off";
+				//showhudtext.GetComponent<TMP_Text>().text = "off";
 			}
 			else{
 				showhudtext.GetComponent<TMP_Text>().text = "on";
@@ -92,10 +92,10 @@ namespace SlimUI.ModernMenu{
 
 			// check tool tip value
 			if(PlayerPrefs.GetInt("ToolTips")==0){
-				tooltipstext.GetComponent<TMP_Text>().text = "off";
+				//tooltipstext.GetComponent<TMP_Text>().text = "off";
 			}
 			else{
-				tooltipstext.GetComponent<TMP_Text>().text = "on";
+				//tooltipstext.GetComponent<TMP_Text>().text = "on";
 			}
 
 			// check shadow distance/enabled

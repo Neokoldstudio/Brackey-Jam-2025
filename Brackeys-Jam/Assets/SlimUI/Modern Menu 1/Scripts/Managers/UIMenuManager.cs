@@ -138,11 +138,9 @@ namespace SlimUI.ModernMenu{
 			mainMenu.SetActive(true);
 		}
 
-		public void LoadScene(string scene){
-			if(scene != ""){
-                //StartCoroutine(LoadAsynchronously(scene)); -> bypassing the loading screen for now
-                SceneManager.LoadSceneAsync(scene);
-            }
+		public void LoadScene(int scene){
+				//StartCoroutine(LoadAsynchronously(scene)); -> bypassing the loading screen for now
+				LevelLoader.Instance.LoadLevel(scene);
         }
 
 		public void  DisablePlayCampaign(){

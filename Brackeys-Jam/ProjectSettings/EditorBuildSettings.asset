@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scene/mainMenu.unity
     guid: 829a86ba161cdd840842063447f41aab
   - enabled: 1
-    path: Assets/Scene/testScene.unity
-    guid: dd899887b2fc18b46b5bd2b474774a2d
+    path: Assets/Scene/testScene 1.unity
+    guid: bf0bb77886732fc469d087ed8c7ca8b1
   - enabled: 1
     path: Assets/Scene/EndScene.unity
     guid: e3a0c40eb13e05749985ec853fd38f59
   - enabled: 1
     path: Assets/Scene/DeathScene.unity
     guid: 33c43f1226721854497a10390f61b8c8
+  - enabled: 1
+    path: Assets/Scene/testScene.unity
+    guid: dd899887b2fc18b46b5bd2b474774a2d
   m_configObjects: {}
