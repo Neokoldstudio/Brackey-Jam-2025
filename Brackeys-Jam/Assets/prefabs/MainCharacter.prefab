@@ -395,7 +395,8 @@ MonoBehaviour:
   recoilForce: 0
   fpsCam: {fileID: 8324863640640970010}
   attackPoint: {fileID: 7986712739736136652}
-  rayMuzzleFlashPrefab: {fileID: 0}
+  rayMuzzleFlashPrefab: {fileID: 2163100902864181023, guid: fcf14aa15cc2ae641b709d5e587321d3,
+    type: 3}
   glueMuzzleFlashPrefab: {fileID: 0}
   trailPrefab: {fileID: 3951710759049243098, guid: 05ac0d78e05e6634eb98bc55503fde2b,
     type: 3}
@@ -690,7 +691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854676949868935817}
   m_Layer: 6
-  m_Name: muzzle
+  m_Name: muzzlePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4567,6 +4568,7 @@ GameObject:
   - component: {fileID: 5278223556974762748}
   - component: {fileID: 4825059444690411483}
   - component: {fileID: 8836608227934950039}
+  - component: {fileID: 5620650179927654232}
   m_Layer: 7
   m_Name: Character
   m_TagString: Player
@@ -4678,7 +4680,7 @@ MonoBehaviour:
   AirAccelerationSpeed: 5
   Drag: 0.1
   AllowJumpingWhenSliding: 0
-  AllowDoubleJump: 0
+  AllowDoubleJump: 1
   AllowWallJump: 0
   JumpSpeed: 10
   JumpPreGroundingGraceTime: 0.15
@@ -4741,6 +4743,18 @@ MonoBehaviour:
   screenFlash: {fileID: 0}
   healthBar: {fileID: 0}
   healthText: {fileID: 0}
+--- !u!114 &5620650179927654232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7076847725217808979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c4fcd1b47d2a4429465828391dde21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7121601386123042951
 GameObject:
   m_ObjectHideFlags: 0
