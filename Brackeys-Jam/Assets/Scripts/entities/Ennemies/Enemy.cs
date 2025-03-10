@@ -133,6 +133,7 @@ public class Enemy : Entity
         Vector3 direction = (player.position - transform.position).normalized;
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.LookRotation(direction) * Quaternion.Euler(90, 0, 0));
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+        transform.LookAt(player.position);
 
         if (bulletRb)
         {

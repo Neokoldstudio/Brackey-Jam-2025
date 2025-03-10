@@ -3,7 +3,32 @@ guid: ffc7a814545b0fe4ca295ff725599b5b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metaldetails.png
+    second: {fileID: 2100000, guid: 54fdaa13b753d244f8a3b16a7f1e3678, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalplate.png
+    second: {fileID: 2100000, guid: e1321543630095b42a796ff4ea131703, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalslice.png
+    second: {fileID: 2100000, guid: ecae9862d912dee45b0322d21bcbee37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: slimeResidue.png
+    second: {fileID: 2100000, guid: b41935774c910b340b759461c7b72206, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: warningSlices.png
+    second: {fileID: 2100000, guid: 31ee2fad3bdd21547b9b47be849f2e5e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
