@@ -11,8 +11,9 @@ public class CinemachineShake : MonoBehaviour
     private float shakeTimer;
 
     public float tiltingAmount = 0.5f;
-    public float vertigoAmount = 0.5f;
+    public float vertigoAmount = 1f;
     public float speedThreshold = 15f;
+    public float shakeSpeed = 10f; //controls the perlin noise scrolling speed
 
     public Transform cameraFollowTarget; // The empty object Cinemachine follows
     private Vector3 originalPosition;
@@ -38,13 +39,16 @@ public class CinemachineShake : MonoBehaviour
     private IEnumerator ShakeCoroutine(float intensity, float duration)
     {
         float elapsed = 0f;
+        float randomStartX = Random.Range(-1000f, 1000f);
+        float randomStartY = Random.Range(-1000f, 1000f);
 
         while (elapsed < duration)
         {
-            float x = Random.Range(-1f, 1f) * intensity;
-            float y = Random.Range(-1f, 1f) * intensity;
+            float x = Mathf.PerlinNoise(randomStartX + (elapsed/duration)*shakeSpeed, randomStartY)*2-1;
+            float y = Mathf.PerlinNoise(randomStartX, randomStartY + (elapsed / duration) * shakeSpeed) *2-1;
 
-            cameraFollowTarget.localPosition = originalPosition + new Vector3(x, y, 0);
+            cameraFollowTarget.localPosition = originalPosition + new Vector3(x, y, 0) * intensity;
+            virtualCamera.m_Lens.Dutch = Mathf.Lerp(virtualCamera.m_Lens.Dutch, x, 0.1f);
 
             elapsed += Time.deltaTime;
             yield return null;
@@ -71,7 +75,7 @@ public class CinemachineShake : MonoBehaviour
         float tiltAmount = playerVel.x * -tiltingAmount;
         virtualCamera.m_Lens.Dutch = Mathf.Lerp(virtualCamera.m_Lens.Dutch, tiltAmount, 0.1f);
 
-        if(playerVel.magnitude>speedThreshold && playerVel.y<-15) virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(virtualCamera.m_Lens.FieldOfView, 75 + (playerVel.magnitude-speedThreshold) * vertigoAmount,0.1f);
+        if(playerVel.magnitude>speedThreshold) virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(virtualCamera.m_Lens.FieldOfView, 75 + (playerVel.magnitude-speedThreshold) * vertigoAmount,0.1f);
         else virtualCamera.m_Lens.FieldOfView = 75;
     }
 }

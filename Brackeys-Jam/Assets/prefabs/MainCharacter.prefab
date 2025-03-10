@@ -6124,6 +6124,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2431577807537302642, guid: c75e91cf060bbf04e89204fa400606df,
         type: 3}
+      propertyPath: tiltingAmount
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431577807537302642, guid: c75e91cf060bbf04e89204fa400606df,
+        type: 3}
       propertyPath: cameraFollowTarget
       value: 
       objectReference: {fileID: 5977105769854858638}
