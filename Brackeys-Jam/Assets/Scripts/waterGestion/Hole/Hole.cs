@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hole : MonoBehaviour
 {
     private HoleSpawner holeSpawner;
+    public GameObject Slime;
     public float shrinkSpeed = 3f;
 
     private void Awake()
@@ -19,6 +20,8 @@ public class Hole : MonoBehaviour
 
     public void Die()
     {
+        holeSpawner.SealHole();
+        Slime.SetActive(true);
         StartCoroutine(ShrinkAndDestroy());
         if (ScoreManager.Instance.GetAirTime() > 1.0f)
         { 
