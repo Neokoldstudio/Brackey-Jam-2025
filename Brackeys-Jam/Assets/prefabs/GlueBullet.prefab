@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7395709647670478714}
   - component: {fileID: 7641060038674876765}
   - component: {fileID: 8088782461364176495}
-  m_Layer: 1
+  m_Layer: 3
   m_Name: youpie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,6 +258,8 @@ MonoBehaviour:
   bounceAmount: 20
   shrinkSpeed: 3
   maxFlightTime: 2
+  impactVfx: {fileID: 154192791674993476, guid: 8fc81125e52f8834991b1947b0cb8993,
+    type: 3}
 --- !u!96 &5273819959173890958
 TrailRenderer:
   serializedVersion: 3

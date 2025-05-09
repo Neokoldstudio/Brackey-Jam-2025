@@ -19,6 +19,7 @@ public class glueBullet : MonoBehaviour
     public float shrinkSpeed = 3f;
     public float maxFlightTime = 0.5f;
 
+    public GameObject impactVfx;
     private Collider _SphereCollider;
     private Collider _BoxCollider;
     private Rigidbody _Rigidbody;
@@ -56,6 +57,7 @@ public class glueBullet : MonoBehaviour
                     //bullet normal lign up with surface normal to orient the model correctly
                     this.transform.up = collision.GetContact(0).normal;
                     StartCoroutine(DestroyAfterTime());
+                    GameObject slimeVfx = Instantiate(impactVfx, transform);
                     _glueState = GlueState.Glued;
                     StartBounceAnimation();
                     _TrailRenderer.enabled = false;

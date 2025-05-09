@@ -7,6 +7,7 @@ public class MuzzleFlash : MonoBehaviour
     // Start is called before the first frame update
     public float minScale = 0.002f;
     public float maxScale = 0.0155f;
+    public float timeDisapear = 0.1f;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class MuzzleFlash : MonoBehaviour
 
     private IEnumerator Disapear()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(timeDisapear);
         Destroy(gameObject);
     }
 }

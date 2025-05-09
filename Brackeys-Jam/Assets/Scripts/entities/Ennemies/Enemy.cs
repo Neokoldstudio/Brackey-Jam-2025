@@ -17,6 +17,7 @@ public class Enemy : Entity
     public GameObject bulletPrefab;
     public float shootForce = 10f;
     public GameObject gluedEnemy;
+    public GameObject onDeathEffect;
 
     private Material material;
     private Transform player;
@@ -111,6 +112,9 @@ public class Enemy : Entity
         AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
 
         WaterSystem.Instance.DrainWater(10f);
+
+        GameObject onDeathFx = Instantiate(onDeathEffect, transform.position, Quaternion.identity);
+
         base.Die();
     }
 

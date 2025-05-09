@@ -37,7 +37,9 @@ public class Gun : MonoBehaviour
     public GameObject rayMuzzleFlashPrefab;
     public GameObject glueMuzzleFlashPrefab;
     public GameObject trailPrefab;
+    public GameObject bulletHitEffect;
     public Transform muzzlePos;
+    public Transform muzzlePosGlue;
 
     private bool shooting, readyToShoot = true;
 
@@ -88,7 +90,9 @@ public class Gun : MonoBehaviour
 
         if (glueMuzzleFlashPrefab)
         {
-            Instantiate(glueMuzzleFlashPrefab, attackPoint.position, Quaternion.identity);
+            GameObject muzzleFlash = Instantiate(glueMuzzleFlashPrefab, muzzlePosGlue.position, Quaternion.identity);
+            muzzleFlash.transform.parent = muzzlePosGlue;
+            muzzleFlash.transform.localRotation = muzzlePosGlue.localRotation;
         }
 
         if (playerRb)
@@ -112,9 +116,12 @@ public class Gun : MonoBehaviour
         Vector3 direction = fpsCam.transform.forward;
         Vector3 hitPoint = fpsCam.transform.position + (direction * hitscanRange);
 
+
         if (Physics.Raycast(fpsCam.transform.position, direction, out RaycastHit hit, hitscanRange))
         {
             hitPoint = hit.point;
+            GameObject hitEffect = Instantiate(bulletHitEffect, hitPoint, Quaternion.identity);
+            hitEffect.transform.LookAt(transform);
             if (hit.collider.gameObject.TryGetComponent(out Entity entity))
             {
                 entity.GetHit(hitscanDamage);
