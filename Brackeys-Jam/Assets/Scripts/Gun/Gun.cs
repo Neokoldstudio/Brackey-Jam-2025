@@ -40,12 +40,15 @@ public class Gun : MonoBehaviour
     public GameObject bulletHitEffect;
     public Transform muzzlePos;
     public Transform muzzlePosGlue;
+    public GameObject gunBobObj;
+    private GunBob gunBob;
 
     private bool shooting, readyToShoot = true;
 
     private void Awake()
     {
         hitscanBulletsLeft = hitscanMagazineSize;
+        gunBob = gunBobObj.GetComponent<GunBob>();
     }
 
     private void Update()
@@ -110,6 +113,8 @@ public class Gun : MonoBehaviour
 
     private void FireHitscan()
     {
+        gunBob.TriggerRecoil();
+
         hitscanReadyToShoot = false;
         hitscanBulletsLeft--;
 

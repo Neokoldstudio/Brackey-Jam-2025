@@ -271,6 +271,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 249801370}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &272947278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4352789888778164703, guid: 814950623a258c342b8046ed46c53276,
+    type: 3}
+  m_PrefabInstance: {fileID: 7738875865005988543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &272947280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6529201768771153000, guid: 814950623a258c342b8046ed46c53276,
+    type: 3}
+  m_PrefabInstance: {fileID: 7738875865005988543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272947278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70cf61ee5029774296a415c7cded295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &357430720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,11 +2177,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water
       objectReference: {fileID: 0}
-    - target: {fileID: 558981632735588066, guid: 4565e3f487d3d5740a5d3ba76c331283,
-        type: 3}
-      propertyPath: m_TagString
-      value: water
-      objectReference: {fileID: 0}
     - target: {fileID: 9200069991182547594, guid: 4565e3f487d3d5740a5d3ba76c331283,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2363,6 +2376,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1908149802951830419, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: gunBob
+      value: 
+      objectReference: {fileID: 272947280}
+    - target: {fileID: 1908149802951830419, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: gunBobObj
+      value: 
+      objectReference: {fileID: 272947278}
+    - target: {fileID: 1908149802951830419, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: bulletHitEffect
+      value: 
+      objectReference: {fileID: 154192791674993476, guid: b8ee8be60d7c3164fa26d08167acee96,
+        type: 3}
     - target: {fileID: 3156125957305551982, guid: 814950623a258c342b8046ed46c53276,
         type: 3}
       propertyPath: m_Name

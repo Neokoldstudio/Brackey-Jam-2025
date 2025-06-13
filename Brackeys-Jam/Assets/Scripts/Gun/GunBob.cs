@@ -20,15 +20,12 @@ public class GunBob : MonoBehaviour
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private float bobTimer = 0f;
+    private bool RecoilActive = false;
 
     [Header("Recoil Settings")]
-    public AnimationCurve recoilCurve;
-    public float recoilDuration = 0.15f;
-    public float recoilKickback = 0.05f; // Reduced for a softer effect
-    public float recoilRotation = 5f; // Less rotation for a more natural effect
-
-    private bool isRecoiling;
-    private Coroutine recoilCoroutine;
+    public float recoilKickback = 0.05f;
+    public float recoilRotation = 5f;
+    public float recoilResetSpeed = 0.15f;
 
     private void Start()
     {
@@ -49,7 +46,7 @@ public class GunBob : MonoBehaviour
         Vector3 velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         float verticalVelocity = player.Velocity.y;
 
-        if (velocity.magnitude > 0.1f && isGrounded)
+        if (velocity.magnitude > 0.1f && isGrounded && !RecoilActive)
         {
             bobTimer += Time.deltaTime * bobSpeed;
             float bobOffsetY = Mathf.Sin(bobTimer) * bobAmountY;
@@ -82,54 +79,27 @@ public class GunBob : MonoBehaviour
 
     public void TriggerRecoil()
     {
-        if (isRecoiling) return; // Prevent double animation
-        if (recoilCoroutine != null) StopCoroutine(recoilCoroutine);
-        recoilCoroutine = StartCoroutine(RecoilCoroutine());
+        float recoilZ = -recoilKickback * Random.Range(0.1f, 1.2f);
+        float recoilXRotation = Random.Range(recoilRotation*0.1f, recoilRotation*1.2f);
+
+        gunTransform.localPosition += new Vector3(0, 0, recoilZ);
+        gunTransform.localRotation *= Quaternion.Euler(-recoilXRotation, 0, 0);
+
+        RecoilActive = true;
+        StartCoroutine(RecoilCoroutine());
     }
 
     private IEnumerator RecoilCoroutine()
     {
-        isRecoiling = true;
-
-        Vector3 recoilEndPos = initialPosition + Vector3.back * recoilKickback;
-        Quaternion recoilEndRot = initialRotation * Quaternion.Euler(-recoilRotation, 0, 0);
-
-        float elapsed = 0f;
-
-        // Smooth recoil kick
-        while (elapsed < recoilDuration * 0.4f)
+        while (transform.localPosition.z < initialPosition.z)
         {
-            float t = elapsed / (recoilDuration * 0.4f);
-            float curveValue = recoilCurve.Evaluate(t);
-
-            gunTransform.localPosition = Vector3.Lerp(initialPosition, recoilEndPos, curveValue);
-            gunTransform.localRotation = Quaternion.Slerp(initialRotation, recoilEndRot, curveValue);
-
-            elapsed += Time.deltaTime;
+            gunTransform.localPosition = Vector3.Lerp(transform.localPosition, initialPosition, Time.deltaTime * recoilResetSpeed);
+            gunTransform.localRotation = Quaternion.Slerp(transform.localRotation, initialRotation, Time.deltaTime * recoilResetSpeed);
             yield return null;
         }
 
-        // Hold position briefly before returning
-        yield return new WaitForSeconds(0.05f);
-
-        // Smooth return to normal
-        elapsed = 0f;
-        while (elapsed < recoilDuration * 0.6f)
-        {
-            float t = elapsed / (recoilDuration * 0.6f);
-            float curveValue = 1f - recoilCurve.Evaluate(t); // Reverse curve for return
-
-            gunTransform.localPosition = Vector3.Lerp(recoilEndPos, initialPosition, curveValue);
-            gunTransform.localRotation = Quaternion.Slerp(recoilEndRot, initialRotation, curveValue);
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        // Ensure it's exactly back
         gunTransform.localPosition = initialPosition;
         gunTransform.localRotation = initialRotation;
-
-        isRecoiling = false;
+        RecoilActive = false;
     }
 }
