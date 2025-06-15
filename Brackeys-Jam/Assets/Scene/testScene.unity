@@ -2397,6 +2397,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 5278223556974762748, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: VerticalVelocityThreshold
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278223556974762748, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: HorizontalVelocityThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5530418996846184076, guid: 814950623a258c342b8046ed46c53276,
         type: 3}
       propertyPath: m_LocalPosition.x

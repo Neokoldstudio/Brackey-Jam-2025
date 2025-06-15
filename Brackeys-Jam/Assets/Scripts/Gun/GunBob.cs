@@ -81,8 +81,10 @@ public class GunBob : MonoBehaviour
     {
         float recoilZ = -recoilKickback * Random.Range(0.1f, 1.2f);
         float recoilXRotation = Random.Range(recoilRotation*0.1f, recoilRotation*1.2f);
+        float recoilZRotation = Random.Range(recoilRotation * 1f, recoilRotation * -1f);
 
         gunTransform.localPosition += new Vector3(0, 0, recoilZ);
+        gunTransform.localRotation *= Quaternion.Euler(0, 0, recoilZRotation);
         gunTransform.localRotation *= Quaternion.Euler(-recoilXRotation, 0, 0);
 
         RecoilActive = true;

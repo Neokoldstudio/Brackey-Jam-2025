@@ -1816,7 +1816,7 @@ PrefabInstance:
     - target: {fileID: 5993023840661706289, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
       propertyPath: musicVolume
-      value: 0
+      value: 0.517
       objectReference: {fileID: 0}
     - target: {fileID: 5993023840661706289, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
@@ -1826,7 +1826,7 @@ PrefabInstance:
     - target: {fileID: 5993023840661706289, guid: 2f14364559a94174997ddd9249f20ca9,
         type: 3}
       propertyPath: ambienceVolume
-      value: 0
+      value: 0.361
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

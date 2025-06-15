@@ -73,6 +73,7 @@ public class AudioManager : MonoBehaviour
 
     private void InitiliazeAmbience(EventReference ambienceEventReference)
     {
+        Debug.Log("start ambiance");
         ambienceEventInstance = CreateEventInstance(ambienceEventReference);
         ambienceEventInstance.start();
     }

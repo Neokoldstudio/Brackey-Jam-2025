@@ -60,6 +60,7 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
 
         [Header("Swimming Exit Impulse")]
         public float ImpulseMultiplier = 1f;
+        public float VerticalVelocityThreshold = 7.5f;
         public float HorizontalVelocityThreshold = 0.5f;
 
         [Header("Misc")]
@@ -425,9 +426,9 @@ namespace KinematicCharacterController.Walkthrough.SwimmingState
                                 if (_jumpRequested)
                                 {
                                     Debug.Log(Motor.Velocity);
-                                    if (Motor.Velocity.y >= 7.5f && (Mathf.Abs(Motor.Velocity.x) > HorizontalVelocityThreshold || Mathf.Abs(Motor.Velocity.z) > HorizontalVelocityThreshold))
+                                    if (Motor.Velocity.y >= VerticalVelocityThreshold && (Mathf.Abs(Motor.Velocity.x) > HorizontalVelocityThreshold || Mathf.Abs(Motor.Velocity.z) > HorizontalVelocityThreshold))
                                     {
-                                        smoothedVelocity += (Motor.CharacterUp * JumpSpeed * ImpulseMultiplier) - Vector3.Project(currentVelocity, Motor.CharacterUp);
+                                        smoothedVelocity = (Motor.CharacterUp * JumpSpeed * ImpulseMultiplier) - Vector3.Project(currentVelocity, Motor.CharacterUp);
                                         AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDolphinJump, this.transform.position);
                                         ScoreManager.Instance.RegisterAction("Dolphin Jump");
                                         _hasJumped = true;
