@@ -277,11 +277,17 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7738875865005988543}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &272947280 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6529201768771153000, guid: 814950623a258c342b8046ed46c53276,
+--- !u!4 &272947279 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3608682729008380328, guid: 814950623a258c342b8046ed46c53276,
     type: 3}
   m_PrefabInstance: {fileID: 7738875865005988543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &272947281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272947278}
   m_Enabled: 1
@@ -289,6 +295,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70cf61ee5029774296a415c7cded295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bobSpeed: 15
+  bobAmountY: 0.005
+  bobAmountX: 0.005
+  swayMultiplier: 0
+  jumpOffset: 0.005
+  fallOffset: 0.005
+  tiltAmount: 1.5
+  resetSpeed: 1
+  gunTransform: {fileID: 272947279}
+  recoilKickback: 0.2
+  recoilRotation: 11.42
+  recoilResetSpeed: 0.3
 --- !u!1 &357430720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,7 +2398,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gunBob
       value: 
-      objectReference: {fileID: 272947280}
+      objectReference: {fileID: 0}
     - target: {fileID: 1908149802951830419, guid: 814950623a258c342b8046ed46c53276,
         type: 3}
       propertyPath: gunBobObj
@@ -2392,6 +2410,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 154192791674993476, guid: b8ee8be60d7c3164fa26d08167acee96,
         type: 3}
+    - target: {fileID: 1908149802951830419, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      propertyPath: hitscanTimeBetweenShots
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 3156125957305551982, guid: 814950623a258c342b8046ed46c53276,
         type: 3}
       propertyPath: m_Name
@@ -2467,10 +2490,15 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1004101364}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1416110365755552942, guid: 814950623a258c342b8046ed46c53276, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4352789888778164703, guid: 814950623a258c342b8046ed46c53276,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 272947281}
   m_SourcePrefab: {fileID: 100100000, guid: 814950623a258c342b8046ed46c53276, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

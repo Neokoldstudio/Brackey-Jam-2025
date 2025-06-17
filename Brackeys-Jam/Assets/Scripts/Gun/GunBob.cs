@@ -93,8 +93,11 @@ public class GunBob : MonoBehaviour
 
     private IEnumerator RecoilCoroutine()
     {
-        while (transform.localPosition.z < initialPosition.z)
+        float elapsed = 0f;
+        while (elapsed <= recoilResetSpeed)
         {
+            Debug.Log("Recoil active, resetting position and rotation.");
+            elapsed += Time.deltaTime;
             gunTransform.localPosition = Vector3.Lerp(transform.localPosition, initialPosition, Time.deltaTime * recoilResetSpeed);
             gunTransform.localRotation = Quaternion.Slerp(transform.localRotation, initialRotation, Time.deltaTime * recoilResetSpeed);
             yield return null;

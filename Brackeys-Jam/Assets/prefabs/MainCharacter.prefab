@@ -458,7 +458,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7986712739736136652}
   - component: {fileID: 1908149802951830419}
-  - component: {fileID: 1416110365755552942}
   m_Layer: 6
   m_Name: muzzle
   m_TagString: Untagged
@@ -522,31 +521,7 @@ MonoBehaviour:
     type: 3}
   muzzlePos: {fileID: 854676949868935817}
   muzzlePosGlue: {fileID: 7749174552220433961}
-  gunBobObj: {fileID: 673724731009148440}
---- !u!114 &1416110365755552942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673724731009148440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70cf61ee5029774296a415c7cded295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bobSpeed: 15
-  bobAmountY: 0.005
-  bobAmountX: 0.005
-  swayMultiplier: 0
-  jumpOffset: 0.005
-  fallOffset: 0.005
-  tiltAmount: 1.5
-  resetSpeed: 1
-  gunTransform: {fileID: 3608682729008380328}
-  recoilKickback: 5.25
-  recoilRotation: 11.42
-  recoilResetSpeed: 0.15
+  gunBobObj: {fileID: 4352789888778164703}
 --- !u!1 &692812451942965565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,6 +3685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3608682729008380328}
   - component: {fileID: 8362891233910099003}
+  - component: {fileID: 8360263947795317446}
   m_Layer: 6
   m_Name: gun2
   m_TagString: Untagged
@@ -3811,6 +3787,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 4
   multiplier: 4
+--- !u!114 &8360263947795317446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352789888778164703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70cf61ee5029774296a415c7cded295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobSpeed: 15
+  bobAmountY: 0.005
+  bobAmountX: 0.005
+  swayMultiplier: 0
+  jumpOffset: 0.005
+  fallOffset: 0.005
+  tiltAmount: 1.5
+  resetSpeed: 1
+  gunTransform: {fileID: 3608682729008380328}
+  recoilKickback: 0.2
+  recoilRotation: 11.42
+  recoilResetSpeed: 0.3
 --- !u!1 &4443811087145914796
 GameObject:
   m_ObjectHideFlags: 0
