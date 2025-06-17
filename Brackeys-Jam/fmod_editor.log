@@ -2,12 +2,13 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20219 (137979), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=192000, nAvgBytesPerSec=1536000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] OutputWASAPI::init                       : Output buffer size: 16384 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] SystemI::init                            : Output requires a sample rate of 192000Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001774D769F48 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000024F32D54048 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,121 +17,15 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] SystemI::createSound                     : filename = FMOD/Brackeys Jam 2025/Build/Desktop/Music.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001774FD8FB98, queue head = 0000017641613998, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001774FD8FB98
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Brackeys Jam 2025/Build/Desktop/Music.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 11242720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2720
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001774D7897A0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Main OST_010325_Mr1@NAGA', format=5, channels=2, frequency=48000, lengthbytes=3079008, lengthpcm=10842353, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001774FD8FB98
-[LOG] SoundI::release                          : Main OST_010325_Mr1@NAGA (000001774FD8FB98)
-[LOG] SoundI::release                          :     Main OST_010325_Mr1@NAGA (0000017615069B48)
-[LOG] SoundI::release                          :     Main OST_010325_Mr1@NAGA (000001774FD92928)
-[LOG] SystemI::createSound                     : filename = FMOD/Brackeys Jam 2025/Build/Desktop/Music.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001774FD8CAA8, queue head = 0000017641613998, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001774FD8CAA8
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Brackeys Jam 2025/Build/Desktop/Music.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 11242720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2720
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000175AE778AC0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ingame OST_010325Mr1@NAGA', format=5, channels=2, frequency=48000, lengthbytes=8157024, lengthpcm=28190118, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001774FD8CAA8
-[LOG] SystemI::createSound                     : filename = FMOD/Brackeys Jam 2025/Build/Desktop/Music.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001774FD8D168, queue head = 0000017641613998, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001774FD8D168
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Brackeys Jam 2025/Build/Desktop/Music.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 11242720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2720
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001774D7898E0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ingame OST_010325Mr1@NAGA', format=5, channels=2, frequency=48000, lengthbytes=8157024, lengthpcm=28190118, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001774FD8D168
-[LOG] SoundI::release                          : Ingame OST_010325Mr1@NAGA (000001774FD8CAA8)
-[LOG] SoundI::release                          :     Ingame OST_010325Mr1@NAGA (00000176ABCA35A8)
-[LOG] SoundI::release                          :     Ingame OST_010325Mr1@NAGA (000001774FD8F178)
-[LOG] SoundI::release                          : Ingame OST_010325Mr1@NAGA (000001774FD8D168)
-[LOG] SoundI::release                          :     Ingame OST_010325Mr1@NAGA (0000017650435478)
-[LOG] SoundI::release                          :     Ingame OST_010325Mr1@NAGA (000001774FD91D58)
-[LOG] SystemI::createSound                     : filename = FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001774FD91D58, queue head = 0000017641613998, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001774FD91D58
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 508608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4512
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001774D7893E0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 6013
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ambience Submarine', format=5, channels=2, frequency=48000, lengthbytes=315744, lengthpcm=1104000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.713440.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001774FD91D58
-[LOG] SystemI::createSound                     : filename = FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001774FD8E248, queue head = 0000017641613998, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001774FD8E248
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 508608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4512
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001774D789B60
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 6473
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ambience Submarine Underwater', format=5, channels=2, frequency=48000, lengthbytes=192320, lengthpcm=1104000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.581970.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001774FD8E248
-[LOG] SoundI::release                          : Ambience Submarine (000001774FD91D58)
-[LOG] SoundI::release                          :     Ambience Submarine (00000176ABCA1BA8)
-[LOG] SoundI::release                          :     Ambience Submarine (000001774FD8F178)
-[LOG] SystemI::createSound                     : filename = FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001774FD92928, queue head = 0000017641613998, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001774FD92928
-[LOG] SystemI::createSoundInternal             :     Create name='FMOD/Brackeys Jam 2025/Build/Desktop/Main Level.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 508608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4512
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001774D789CA0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 7455
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Ambience Submarine', format=5, channels=2, frequency=48000, lengthbytes=315744, lengthpcm=1104000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.713440.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001774FD92928
-[LOG] SoundI::release                          : Ambience Submarine Underwater (000001774FD8E248)
-[LOG] SoundI::release                          :     Ambience Submarine Underwater (00000176ABCA0688)
-[LOG] SoundI::release                          :     Ambience Submarine Underwater (000001774FD8C3E8)
-[LOG] SoundI::release                          : Ambience Submarine (000001774FD92928)
-[LOG] SoundI::release                          :     Ambience Submarine (00000176ABCA3408)
-[LOG] SoundI::release                          :     Ambience Submarine (000001774FD8FB98)
-[ERR] assert                                   : assertion: 'gSystemInitCount == 0' failed
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
